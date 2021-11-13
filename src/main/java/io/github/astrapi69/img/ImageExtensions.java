@@ -36,6 +36,7 @@ import java.util.logging.Level;
 import javax.imageio.ImageIO;
 
 import lombok.extern.java.Log;
+
 import org.imgscalr.Scalr;
 import org.imgscalr.Scalr.Method;
 import org.imgscalr.Scalr.Mode;
