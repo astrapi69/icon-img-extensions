@@ -54,6 +54,12 @@ public class ImageIconFactory
 	 *
 	 * @param imagePath
 	 *            the image path
+	 * @param targetWidth
+	 *            the target width
+	 * @param targetHeight
+	 *            the target height
+	 * @throws TranscoderException
+	 *             is thrown when a transcoder is not able to transcode its input
 	 * @return the new {@link ImageIcon}
 	 */
 	public static ImageIcon newImageIconFromSVG(final String imagePath, final int targetWidth,

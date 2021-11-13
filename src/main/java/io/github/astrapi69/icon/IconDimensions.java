@@ -47,7 +47,10 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class IconDimensions
 {
+	/** the icon height */
 	int iconHeight;
+	/** the icon width */
 	int iconWidth;
+	/** the padding of the icon */
 	int padding;
 }
