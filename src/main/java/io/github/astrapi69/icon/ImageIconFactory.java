@@ -62,8 +62,8 @@ public class ImageIconFactory
 	 *             is thrown when a transcoder is not able to transcode its input
 	 * @return the new {@link ImageIcon}
 	 */
-	public static ImageIcon newImageIconFromSVG(final String imagePath, final int targetWidth,
-		final int targetHeight) throws TranscoderException
+	public static ImageIcon newImageIconFromSVG(final String imagePath, final float targetWidth,
+		final float targetHeight) throws TranscoderException
 	{
 		InputStream resourceAsStream = ClassExtensions.getResourceAsStream(imagePath);
 		TranscoderInput input = new TranscoderInput(resourceAsStream);
