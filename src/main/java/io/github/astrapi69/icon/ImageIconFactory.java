@@ -56,8 +56,8 @@ public class ImageIconFactory
 	 *            the image path
 	 * @return the new {@link ImageIcon}
 	 */
-	public static ImageIcon newImageIconFromSVG(final String imagePath,
-		final int targetWidth, final int targetHeight) throws TranscoderException
+	public static ImageIcon newImageIconFromSVG(final String imagePath, final int targetWidth,
+		final int targetHeight) throws TranscoderException
 	{
 		InputStream resourceAsStream = ClassExtensions.getResourceAsStream(imagePath);
 		TranscoderInput input = new TranscoderInput(resourceAsStream);

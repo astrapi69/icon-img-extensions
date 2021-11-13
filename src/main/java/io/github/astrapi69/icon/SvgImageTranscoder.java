@@ -24,11 +24,12 @@
  */
 package io.github.astrapi69.icon;
 
+import java.awt.image.BufferedImage;
+
 import lombok.Getter;
+
 import org.apache.batik.transcoder.TranscoderOutput;
 import org.apache.batik.transcoder.image.ImageTranscoder;
-
-import java.awt.image.BufferedImage;
 
 /**
  * The class {@link SvgImageTranscoder} can transcode a svg image

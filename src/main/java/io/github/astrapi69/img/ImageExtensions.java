@@ -29,6 +29,7 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 import javax.imageio.ImageIO;
 
@@ -41,6 +42,74 @@ import org.imgscalr.Scalr.Mode;
  */
 public class ImageExtensions
 {
+
+	/**
+	 * Generates a random {@link BufferedImage} with the given parameters.
+	 *
+	 * @param width
+	 *            the width
+	 * @param height
+	 *            the height
+	 * @param imageType
+	 *            the type of the image
+	 *
+	 * @return The generated {@link BufferedImage}.
+	 */
+	public static BufferedImage randomBufferedImage(final int width, final int height,
+		final int imageType)
+	{
+		final BufferedImage img = new BufferedImage(width, height, imageType);
+		for (int y = 0; y < height; y++)
+		{
+			for (int x = 0; x < width; x++)
+			{
+				img.setRGB(x, y, (int)(Math.random() * 256));
+			}
+		}
+		return img;
+	}
+
+	/**
+	 * Concatenate the given list of BufferedImage objects to one image and returns the concatenated
+	 * BufferedImage object.
+	 *
+	 * @param imgCollection
+	 *            the BufferedImage collection
+	 * @param width
+	 *            the width of the image that will be returned.
+	 * @param height
+	 *            the height of the image that will be returned.
+	 * @param imageType
+	 *            type of the created image
+	 * @param concatenationDirection
+	 *            the direction of the concatenation.
+	 * @return the buffered image
+	 */
+	public static BufferedImage concatenateImages(final List<BufferedImage> imgCollection,
+		final int width, final int height, final int imageType,
+		final Direction concatenationDirection)
+	{
+		final BufferedImage img = new BufferedImage(width, height, imageType);
+		int x = 0;
+		int y = 0;
+		for (final BufferedImage bi : imgCollection)
+		{
+			final boolean imageDrawn = img.createGraphics().drawImage(bi, x, y, null);
+			if (!imageDrawn)
+			{
+				throw new RuntimeException("BufferedImage could not be drawn:" + bi.toString());
+			}
+			if (concatenationDirection.equals(Direction.vertical))
+			{
+				y += bi.getHeight();
+			}
+			else
+			{
+				x += bi.getWidth();
+			}
+		}
+		return img;
+	}
 
 	/**
 	 * Resize the given BufferedImage and returns the resized BufferedImage.
@@ -206,11 +275,13 @@ public class ImageExtensions
 	}
 
 	/**
-	 * Unweave a secret message from the given {@link BufferedImage}.
+	 * Unweave a secret message from the given {@link BufferedImage}. To weave a secret message to a
+	 * {@link BufferedImage} object use the corresponding method
+	 * {@link ImageExtensions#weaveInto(BufferedImage, String)}
 	 *
 	 * @param bufferedImage
-	 *            the buffered image
-	 * @return the secret message
+	 *            the buffered image with the secret message
+	 * @return the secret message that was weaved into the given {@link BufferedImage} object
 	 */
 	public static String unweaveFrom(final BufferedImage bufferedImage)
 	{
@@ -241,7 +312,8 @@ public class ImageExtensions
 	}
 
 	/**
-	 * Weave the given secret message into the given {@link BufferedImage}.
+	 * Weave the given secret message into the given {@link BufferedImage}. To unweave the secret
+	 * message use the corresponding {@link ImageExtensions#unweaveFrom(BufferedImage)}
 	 *
 	 * @param bufferedImage
 	 *            the buffered image
@@ -251,7 +323,6 @@ public class ImageExtensions
 	 */
 	public static BufferedImage weaveInto(final BufferedImage bufferedImage, final String message)
 	{
-
 		final int width = bufferedImage.getWidth();
 		final int height = bufferedImage.getHeight();
 
