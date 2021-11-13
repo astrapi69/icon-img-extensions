@@ -173,6 +173,3 @@ Do not hesitate to contact the icon-img-extensions developers with your question
 - Feature requests, questions and bug reports can be reported at the [issues page](https://github.com/astrapi69/icon-img-extensions/issues).
 
 ## Similar projects
-
-## Credits
-
