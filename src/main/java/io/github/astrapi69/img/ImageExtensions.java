@@ -29,10 +29,13 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
+import java.util.logging.Level;
 
 import javax.imageio.ImageIO;
 
+import lombok.extern.java.Log;
 import org.imgscalr.Scalr;
 import org.imgscalr.Scalr.Method;
 import org.imgscalr.Scalr.Mode;
@@ -40,6 +43,7 @@ import org.imgscalr.Scalr.Mode;
 /**
  * The class {@link ImageExtensions}.
  */
+@Log
 public class ImageExtensions
 {
 
@@ -181,6 +185,48 @@ public class ImageExtensions
 	public static BufferedImage read(final byte[] byteArray) throws IOException
 	{
 		return ImageIO.read(new ByteArrayInputStream(byteArray));
+	}
+
+	/**
+	 * Gets the buffered image from the given byte array quietly.
+	 *
+	 * @param byteArray
+	 *            the byte array
+	 * @return the buffered image or null if the read process failed.
+	 */
+	public static BufferedImage readQuietly(final byte[] byteArray)
+	{
+		BufferedImage img = null;
+		try
+		{
+			img = read(byteArray);
+		}
+		catch (IOException e)
+		{
+			log.log(Level.SEVERE, "Reading image failed.", e);
+		}
+		return img;
+	}
+
+	/**
+	 * Gets the buffered image from the given byte array quietly.
+	 *
+	 * @param input
+	 *            the input
+	 * @return the buffered image or null if the read process failed.
+	 */
+	public static BufferedImage readQuietly(final InputStream input)
+	{
+		BufferedImage img = null;
+		try
+		{
+			img = ImageIO.read(input);
+		}
+		catch (IOException e)
+		{
+			log.log(Level.SEVERE, "Reading image failed.", e);
+		}
+		return img;
 	}
 
 	/**
