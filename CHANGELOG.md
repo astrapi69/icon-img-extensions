@@ -1,6 +1,13 @@
 ## Change log
 ----------------------
 
+Version 1.1
+-------------
+
+CHANGED:
+
+- change of type from int to float from svg conversion method for fixing type errors
+
 Version 1
 -------------
 

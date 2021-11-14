@@ -54,7 +54,7 @@ task sourcesJar(type: Jar) {
 task javadocJar(type: Jar) {
     from javadoc
     archiveClassifier.set("javadoc")
-    javadoc.properties.failOnError = true
+    javadoc.properties.failOnError = false
 }
 
 jacocoTestReport {
