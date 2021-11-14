@@ -359,7 +359,11 @@ public class ImageExtensions
 	}
 
 	/**
-	 * Weave the given secret message into the given {@link BufferedImage}. To unweave the secret
+	 * Weave the given secret message into the given {@link BufferedImage}. Preconditions for the
+	 * secret message the length must not be greater the 255 and the given image should be not too
+	 * small size, that means 'message.length() * 11 > width * height'
+	 *
+	 * To unweave the secret
 	 * message use the corresponding {@link ImageExtensions#unweaveFrom(BufferedImage)}
 	 *
 	 * @param bufferedImage
@@ -379,7 +383,7 @@ public class ImageExtensions
 		}
 		if (message.length() * 11 > width * height)
 		{
-			throw new IllegalArgumentException("Given image is to small");
+			throw new IllegalArgumentException("Given image is to small. message.length() * 11 > width * height");
 		}
 
 		final byte[] messageBytes = message.getBytes();

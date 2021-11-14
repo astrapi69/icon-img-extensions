@@ -124,24 +124,62 @@ class ImageExtensionsTest
 	@Test
 	public void testWeave() throws IOException
 	{
-		final String filenameprefix = "bell";
-		final String ext = "png";
-		final File hImg = PathFinder.getRelativePath(PathFinder.getSrcTestResourcesDir(), "img",
+		String actual;
+		String expected;
+		String filenameprefix;
+		String ext;
+		String secretMessage;
+		File hImg;
+		BufferedImage horizontalImg;
+		String outputFileName;
+		File outputfile;
+		BufferedImage outputImg;
+		// new scenario...
+		filenameprefix = "bell";
+		ext = "png";
+		hImg = PathFinder.getRelativePath(PathFinder.getSrcTestResourcesDir(), "img",
 			"xmas", filenameprefix + "." + ext);
 
-		final BufferedImage horizontalImg = ImageIO.read(hImg);
-		final String expected = "foo bar";
-		ImageExtensions.weaveInto(horizontalImg, expected);
-		String actual = ImageExtensions.unweaveFrom(horizontalImg);
+		horizontalImg = ImageIO.read(hImg);
+		secretMessage = "foo bar";
+		ImageExtensions.weaveInto(horizontalImg, secretMessage);
+		actual = ImageExtensions.unweaveFrom(horizontalImg);
+		expected = secretMessage;
 		assertEquals(expected, actual);
 
-		final String output = filenameprefix + "output";
-		File outputfile = new File(PathFinder.getSrcTestResourcesDir(), output + "." + ext);
+		outputFileName = filenameprefix + "output";
+		outputfile = new File(PathFinder.getSrcTestResourcesDir(), outputFileName + "." + ext);
 		FileFactory.newFile(outputfile);
 
 		outputfile = ImageExtensions.write(horizontalImg, ext, outputfile);
 
-		final BufferedImage outputImg = ImageIO.read(outputfile);
+		outputImg = ImageIO.read(outputfile);
+		actual = ImageExtensions.unweaveFrom(outputImg);
+
+		assertEquals(expected, actual);
+
+		DeleteFileExtensions.delete(outputfile);
+
+		// new scenario...
+		filenameprefix = "key";
+		ext = "png";
+		hImg = PathFinder.getRelativePath(PathFinder.getSrcTestResourcesDir(), "img",
+			"xmas", filenameprefix + "." + ext);
+
+		horizontalImg = ImageIO.read(hImg);
+		secretMessage = "very secret password";
+		ImageExtensions.weaveInto(horizontalImg, secretMessage);
+		actual = ImageExtensions.unweaveFrom(horizontalImg);
+		expected = secretMessage;
+		assertEquals(expected, actual);
+
+		outputFileName = filenameprefix + "output";
+		outputfile = new File(PathFinder.getSrcTestResourcesDir(), outputFileName + "." + ext);
+		FileFactory.newFile(outputfile);
+
+		outputfile = ImageExtensions.write(horizontalImg, ext, outputfile);
+
+		outputImg = ImageIO.read(outputfile);
 		actual = ImageExtensions.unweaveFrom(outputImg);
 
 		assertEquals(expected, actual);
