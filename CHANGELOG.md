@@ -4,6 +4,11 @@
 Version 1.2-SNAPSHOT
 -------------
 
+ADDED:
+
+- new JButtonInfo class created for build JButton objects from the given fields 
+- new workflow for 'Java CI with Gradle' with codecov-action
+
 Version 1.1
 -------------
 

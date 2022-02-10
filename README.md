@@ -2,13 +2,14 @@
 
 <div style="text-align: center">
 
-[![Build Status](https://travis-ci.com/astrapi69/icon-img-extensions.svg?branch=master)](https://travis-ci.com/github/astrapi69/icon-img-extensions)
+[![Java CI with Gradle](https://github.com/astrapi69/icon-img-extensions/actions/workflows/gradle.yml/badge.svg)](https://github.com/astrapi69/icon-img-extensions/actions/workflows/gradle.yml)
 [![Coverage Status](https://codecov.io/gh/astrapi69/icon-img-extensions/branch/develop/graph/badge.svg)](https://codecov.io/gh/astrapi69/icon-img-extensions)
 [![Open Issues](https://img.shields.io/github/issues/astrapi69/icon-img-extensions.svg?style=flat)](https://github.com/astrapi69/icon-img-extensions/issues)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/icon-img-extensions/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/icon-img-extensions)
 [![Javadocs](http://www.javadoc.io/badge/io.github.astrapi69/icon-img-extensions.svg)](http://www.javadoc.io/doc/io.github.astrapi69/icon-img-extensions)
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](http://opensource.org/licenses/MIT)
 [![Donate](https://img.shields.io/badge/donate-❤-ff2244.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GVBTWLRAZ7HB8)
+[![Hits Of Code](https://hitsofcode.com/github/astrapi69/icon-img-extensions?branch=develop)](https://hitsofcode.com/github/astrapi69/icon-img-extensions/view?branch=develop)
 
 </div>
 
