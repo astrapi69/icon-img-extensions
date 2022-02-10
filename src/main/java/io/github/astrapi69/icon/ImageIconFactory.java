@@ -24,14 +24,14 @@
  */
 package io.github.astrapi69.icon;
 
-import java.awt.*;
+import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.InputStream;
 import java.net.URL;
 
 import javax.imageio.ImageIO;
-import javax.swing.*;
+import javax.swing.ImageIcon;
 
 import org.apache.batik.anim.dom.SVGDOMImplementation;
 import org.apache.batik.transcoder.TranscoderException;
@@ -119,6 +119,10 @@ public class ImageIconFactory
 	 *
 	 * @param relativeImagePath
 	 *            the relative image path
+	 * @param newWidth
+	 *            the new width
+	 * @param newHeight
+	 *            the new height
 	 * @return the new {@link ImageIcon}
 	 */
 	public static ImageIcon newImageIcon(String relativeImagePath, int newWidth, int newHeight)
@@ -155,6 +159,10 @@ public class ImageIconFactory
 	 *            the image path
 	 * @param relativePath
 	 *            the flag that indicates if the given path is relative
+	 * @param newWidth
+	 *            the new width
+	 * @param newHeight
+	 *            the new height
 	 * @return the new {@link ImageIcon}
 	 */
 	public static ImageIcon newImageIcon(String imagePath, boolean relativePath, int newWidth,

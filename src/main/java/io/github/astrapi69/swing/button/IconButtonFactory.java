@@ -24,9 +24,11 @@
  */
 package io.github.astrapi69.swing.button;
 
-import javax.swing.*;
+import javax.swing.Icon;
+import javax.swing.JButton;
 
 import io.github.astrapi69.icon.ImageIconFactory;
+import io.github.astrapi69.swing.button.builder.JButtonInfo;
 
 /**
  * A factory {@link IconButtonFactory} provides factory methods for create {@link JButton} objects
@@ -44,9 +46,7 @@ public class IconButtonFactory
 	 */
 	public static JButton newIconButton(Icon icon)
 	{
-		JButton button = ButtonFactory.newJButton();
-		button.setIcon(icon);
-		return button;
+		return JButtonInfo.builder().icon(icon).build().toJButton();
 	}
 
 	/**
@@ -61,9 +61,7 @@ public class IconButtonFactory
 	 */
 	public static JButton newIconButton(Icon icon, String toolTipText)
 	{
-		JButton button = newIconButton(icon);
-		button.setToolTipText(toolTipText);
-		return button;
+		return JButtonInfo.builder().icon(icon).toolTipText(toolTipText).build().toJButton();
 	}
 
 	/**
@@ -78,9 +76,8 @@ public class IconButtonFactory
 	 */
 	public static JButton newIconButton(String relativeImagePath, String toolTipText)
 	{
-		JButton button = newIconButton(ImageIconFactory.newImageIcon(relativeImagePath),
-			toolTipText);
-		return button;
+		return JButtonInfo.builder().icon(ImageIconFactory.newImageIcon(relativeImagePath))
+			.toolTipText(toolTipText).build().toJButton();
 	}
 
 	/**
@@ -97,9 +94,8 @@ public class IconButtonFactory
 	 */
 	public static JButton newIconButton(Icon icon, String toolTipText, String text)
 	{
-		JButton button = newIconButton(icon, toolTipText);
-		button.setText(text);
-		return button;
+		return JButtonInfo.builder().text(text).icon(icon).toolTipText(toolTipText).build()
+			.toJButton();
 	}
 
 	/**
@@ -114,9 +110,7 @@ public class IconButtonFactory
 	 */
 	public static JButton newIconButtonWithText(Icon icon, String text)
 	{
-		JButton button = newIconButton(icon);
-		button.setText(text);
-		return button;
+		return JButtonInfo.builder().text(text).icon(icon).build().toJButton();
 	}
 
 	/**
@@ -136,9 +130,8 @@ public class IconButtonFactory
 	public static JButton newIconButton(Icon icon, String toolTipText, String text,
 		String actionCommand)
 	{
-		JButton button = newIconButton(icon, toolTipText, text);
-		button.setActionCommand(actionCommand);
-		return button;
+		return JButtonInfo.builder().text(text).icon(icon).toolTipText(toolTipText)
+			.actionCommand(actionCommand).build().toJButton();
 	}
 
 }

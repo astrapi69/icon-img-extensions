@@ -28,7 +28,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.util.List;
 
-import javax.swing.*;
+import javax.swing.ImageIcon;
 
 import org.junit.jupiter.api.Test;
 

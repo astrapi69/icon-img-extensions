@@ -24,7 +24,10 @@
  */
 package io.github.astrapi69.swing.button;
 
-import javax.swing.*;
+import javax.swing.JButton;
+
+import lombok.NonNull;
+import io.github.astrapi69.swing.button.builder.JButtonInfo;
 
 /**
  * A factory {@link ButtonFactory} provides factory methods for create {@link JButton} objects
@@ -39,8 +42,7 @@ public class ButtonFactory
 	 */
 	public static JButton newJButton()
 	{
-		JButton button = new JButton();
-		return button;
+		return JButtonInfo.builder().build().toJButton();
 	}
 
 	/**
@@ -50,10 +52,22 @@ public class ButtonFactory
 	 *            the text for the button
 	 * @return the new {@link JButton} object
 	 */
-	public static JButton newJButton(String text)
+	public static JButton newJButton(final @NonNull String text)
 	{
-		JButton button = new JButton(text);
-		return button;
+		return JButtonInfo.builder().text(text).build().toJButton();
+	}
+
+	/**
+	 * Factory method for create a <code>JButton</code> with the given <code>JButtonInfo</code>
+	 * object for build a <code>JButton</code>
+	 *
+	 * @param buttonInfo
+	 *            the information for build a <code>JButton</code>.
+	 * @return the new {@link JButton} object
+	 */
+	public static JButton newJButton(final @NonNull JButtonInfo buttonInfo)
+	{
+		return buttonInfo.toJButton();
 	}
 
 }

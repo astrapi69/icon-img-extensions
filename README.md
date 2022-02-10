@@ -2,17 +2,18 @@
 
 <div style="text-align: center">
 
-[![Build Status](https://travis-ci.com/astrapi69/icon-img-extensions.svg?branch=master)](https://travis-ci.com/github/astrapi69/icon-img-extensions)
+[![Java CI with Gradle](https://github.com/astrapi69/icon-img-extensions/actions/workflows/gradle.yml/badge.svg)](https://github.com/astrapi69/icon-img-extensions/actions/workflows/gradle.yml)
 [![Coverage Status](https://codecov.io/gh/astrapi69/icon-img-extensions/branch/develop/graph/badge.svg)](https://codecov.io/gh/astrapi69/icon-img-extensions)
 [![Open Issues](https://img.shields.io/github/issues/astrapi69/icon-img-extensions.svg?style=flat)](https://github.com/astrapi69/icon-img-extensions/issues)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/icon-img-extensions/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/icon-img-extensions)
 [![Javadocs](http://www.javadoc.io/badge/io.github.astrapi69/icon-img-extensions.svg)](http://www.javadoc.io/doc/io.github.astrapi69/icon-img-extensions)
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](http://opensource.org/licenses/MIT)
 [![Donate](https://img.shields.io/badge/donate-❤-ff2244.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GVBTWLRAZ7HB8)
+[![Hits Of Code](https://hitsofcode.com/github/astrapi69/icon-img-extensions?branch=develop)](https://hitsofcode.com/github/astrapi69/icon-img-extensions/view?branch=develop)
 
 </div>
 
-Creates, converts and scales images and icons files. 
+Creates, converts and scales images and icons files.
 
 > Please support this project by simply putting a Github <!-- Place this tag where you want the button to render. -->
 <a class="github-button" href="https://github.com/astrapi69/icon-img-extensions" data-icon="octicon-star" aria-label="Star astrapi69/icon-img-extensions on GitHub">Star ⭐</a>
@@ -20,12 +21,6 @@ Creates, converts and scales images and icons files.
 > Share this library with friends on Twitter and everywhere else you can
 >
 > If you love this project [![donation](https://img.shields.io/badge/donate-❤-ff2244.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GVBTWLRAZ7HB8)
-
-
-# Template from this project
-
-You can derive your java library project from this you can easily and adapt to your specific project if you follow the
-instruction from this [medium blog](https://asterios-raptis.medium.com/new-github-template-repository-feature-ec09afe261b8)
 
 ## Note
 
@@ -35,34 +30,6 @@ No animals were harmed in the making of this library.
 
 The source code comes under the liberal MIT License, making icon-img-extensions great for all types of applications.
 
-## Maven dependency
-
-Maven dependency is now on sonatype.
-Check out [sonatype repository](https://oss.sonatype.org/index.html#nexus-search;gav~io.github.astrapi69~icon-img-extensions~~~) for latest snapshots and releases.
-
-Add the following maven dependency to your project `pom.xml` if you want to import the core 
-functionality of icon-img-extensions:
-
-Than you can add the dependency to your dependencies:
-
-	<properties>
-			...
-		<!-- icon-img-extensions version -->
-		<icon-img-extensions.version>1.1</icon-img-extensions.version>
-			...
-	</properties>
-			...
-		<dependencies>
-			...
-			<!-- icon-img-extensions DEPENDENCY -->
-			<dependency>
-				<groupId>io.github.astrapi69</groupId>
-				<artifactId>icon-img-extensions</artifactId>
-				<version>${icon-img-extensions.version}</version>
-			</dependency>
-			...
-		</dependencies>
-
 ## gradle dependency
 
 You can first define the version in the ext section and add than the following gradle dependency to
@@ -70,28 +37,48 @@ your project `build.gradle` if you want to import the core functionality of icon
 
 define version in file gradle.properties
 ```
-iconImgExtensionsVersion=1.1
+iconImgExtensionsVersion=1.2
 ```
 
 or in build.gradle ext area
 
 ```
-ext {
-			...
-    iconImgExtensionsVersion = "1.1"
-			...
-}
+    iconImgExtensionsVersion = "1.2"
 ```
 
 then add the dependency to the dependencies area
 
 ```
-dependencies {
-			...
     implementation("io.github.astrapi69:icon-img-extensions:$iconImgExtensionsVersion")
-			...
-}
 ```
+
+## Maven dependency
+
+Maven dependency is now on sonatype.
+Check out [sonatype repository](https://oss.sonatype.org/index.html#nexus-search;gav~io.github.astrapi69~icon-img-extensions~~~) for latest snapshots and releases.
+
+Add the following maven dependency to your project `pom.xml` if you want to import the core
+functionality of icon-img-extensions:
+
+Than you can add the dependency to your dependencies:
+
+    <properties>
+            ...
+        <!-- icon-img-extensions version -->
+        <icon-img-extensions.version>1.2</icon-img-extensions.version>
+            ...
+    </properties>
+            ...
+        <dependencies>
+            ...
+            <!-- icon-img-extensions DEPENDENCY -->
+            <dependency>
+                <groupId>io.github.astrapi69</groupId>
+                <artifactId>icon-img-extensions</artifactId>
+                <version>${icon-img-extensions.version}</version>
+            </dependency>
+            ...
+        </dependencies>
 
 # Donations
 
