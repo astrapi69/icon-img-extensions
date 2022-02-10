@@ -360,7 +360,7 @@ public class ImageExtensions
 	/**
 	 * Weave the given secret message into the given {@link BufferedImage}. Preconditions for the
 	 * secret message the length must not be greater the 255 and the given image should be not too
-	 * small size, that means 'message.length() * 11 > width * height'
+	 * small size, that means 'message.length() * 11 &gt; width * height'
 	 *
 	 * To unweave the secret message use the corresponding
 	 * {@link ImageExtensions#unweaveFrom(BufferedImage)}

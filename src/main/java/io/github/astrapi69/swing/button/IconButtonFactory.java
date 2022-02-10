@@ -24,7 +24,8 @@
  */
 package io.github.astrapi69.swing.button;
 
-import javax.swing.*;
+import javax.swing.Icon;
+import javax.swing.JButton;
 
 import io.github.astrapi69.icon.ImageIconFactory;
 import io.github.astrapi69.swing.button.builder.JButtonInfo;
