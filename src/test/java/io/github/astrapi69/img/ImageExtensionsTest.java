@@ -137,8 +137,8 @@ class ImageExtensionsTest
 		// new scenario...
 		filenameprefix = "bell";
 		ext = "png";
-		hImg = PathFinder.getRelativePath(PathFinder.getSrcTestResourcesDir(), "img",
-			"xmas", filenameprefix + "." + ext);
+		hImg = PathFinder.getRelativePath(PathFinder.getSrcTestResourcesDir(), "img", "xmas",
+			filenameprefix + "." + ext);
 
 		horizontalImg = ImageIO.read(hImg);
 		secretMessage = "foo bar";
@@ -163,8 +163,8 @@ class ImageExtensionsTest
 		// new scenario...
 		filenameprefix = "key";
 		ext = "png";
-		hImg = PathFinder.getRelativePath(PathFinder.getSrcTestResourcesDir(), "img",
-			"xmas", filenameprefix + "." + ext);
+		hImg = PathFinder.getRelativePath(PathFinder.getSrcTestResourcesDir(), "img", "xmas",
+			filenameprefix + "." + ext);
 
 		horizontalImg = ImageIO.read(hImg);
 		secretMessage = "very secret password";

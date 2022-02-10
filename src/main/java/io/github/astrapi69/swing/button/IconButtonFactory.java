@@ -45,9 +45,7 @@ public class IconButtonFactory
 	 */
 	public static JButton newIconButton(Icon icon)
 	{
-		return JButtonInfo.builder()
-				.icon(icon)
-				.build().toJButton();
+		return JButtonInfo.builder().icon(icon).build().toJButton();
 	}
 
 	/**
@@ -62,10 +60,7 @@ public class IconButtonFactory
 	 */
 	public static JButton newIconButton(Icon icon, String toolTipText)
 	{
-		return JButtonInfo.builder()
-				.icon(icon)
-				.toolTipText(toolTipText)
-				.build().toJButton();
+		return JButtonInfo.builder().icon(icon).toolTipText(toolTipText).build().toJButton();
 	}
 
 	/**
@@ -80,10 +75,8 @@ public class IconButtonFactory
 	 */
 	public static JButton newIconButton(String relativeImagePath, String toolTipText)
 	{
-		return JButtonInfo.builder()
-				.icon(ImageIconFactory.newImageIcon(relativeImagePath))
-				.toolTipText(toolTipText)
-				.build().toJButton();
+		return JButtonInfo.builder().icon(ImageIconFactory.newImageIcon(relativeImagePath))
+			.toolTipText(toolTipText).build().toJButton();
 	}
 
 	/**
@@ -100,11 +93,8 @@ public class IconButtonFactory
 	 */
 	public static JButton newIconButton(Icon icon, String toolTipText, String text)
 	{
-		return JButtonInfo.builder()
-				.text(text)
-				.icon(icon)
-				.toolTipText(toolTipText)
-				.build().toJButton();
+		return JButtonInfo.builder().text(text).icon(icon).toolTipText(toolTipText).build()
+			.toJButton();
 	}
 
 	/**
@@ -119,10 +109,7 @@ public class IconButtonFactory
 	 */
 	public static JButton newIconButtonWithText(Icon icon, String text)
 	{
-		return JButtonInfo.builder()
-				.text(text)
-				.icon(icon)
-				.build().toJButton();
+		return JButtonInfo.builder().text(text).icon(icon).build().toJButton();
 	}
 
 	/**
@@ -142,12 +129,8 @@ public class IconButtonFactory
 	public static JButton newIconButton(Icon icon, String toolTipText, String text,
 		String actionCommand)
 	{
-		return JButtonInfo.builder()
-				.text(text)
-				.icon(icon)
-				.toolTipText(toolTipText)
-				.actionCommand(actionCommand)
-				.build().toJButton();
+		return JButtonInfo.builder().text(text).icon(icon).toolTipText(toolTipText)
+			.actionCommand(actionCommand).build().toJButton();
 	}
 
 }

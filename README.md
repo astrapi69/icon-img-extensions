@@ -13,7 +13,7 @@
 
 </div>
 
-Creates, converts and scales images and icons files. 
+Creates, converts and scales images and icons files.
 
 > Please support this project by simply putting a Github <!-- Place this tag where you want the button to render. -->
 <a class="github-button" href="https://github.com/astrapi69/icon-img-extensions" data-icon="octicon-star" aria-label="Star astrapi69/icon-img-extensions on GitHub">Star ⭐</a>
@@ -41,28 +41,28 @@ The source code comes under the liberal MIT License, making icon-img-extensions 
 Maven dependency is now on sonatype.
 Check out [sonatype repository](https://oss.sonatype.org/index.html#nexus-search;gav~io.github.astrapi69~icon-img-extensions~~~) for latest snapshots and releases.
 
-Add the following maven dependency to your project `pom.xml` if you want to import the core 
+Add the following maven dependency to your project `pom.xml` if you want to import the core
 functionality of icon-img-extensions:
 
 Than you can add the dependency to your dependencies:
 
-	<properties>
-			...
-		<!-- icon-img-extensions version -->
-		<icon-img-extensions.version>1.1</icon-img-extensions.version>
-			...
-	</properties>
-			...
-		<dependencies>
-			...
-			<!-- icon-img-extensions DEPENDENCY -->
-			<dependency>
-				<groupId>io.github.astrapi69</groupId>
-				<artifactId>icon-img-extensions</artifactId>
-				<version>${icon-img-extensions.version}</version>
-			</dependency>
-			...
-		</dependencies>
+    <properties>
+            ...
+        <!-- icon-img-extensions version -->
+        <icon-img-extensions.version>1.1</icon-img-extensions.version>
+            ...
+    </properties>
+            ...
+        <dependencies>
+            ...
+            <!-- icon-img-extensions DEPENDENCY -->
+            <dependency>
+                <groupId>io.github.astrapi69</groupId>
+                <artifactId>icon-img-extensions</artifactId>
+                <version>${icon-img-extensions.version}</version>
+            </dependency>
+            ...
+        </dependencies>
 
 ## gradle dependency
 
@@ -78,9 +78,9 @@ or in build.gradle ext area
 
 ```
 ext {
-			...
+            ...
     iconImgExtensionsVersion = "1.1"
-			...
+            ...
 }
 ```
 
@@ -88,9 +88,9 @@ then add the dependency to the dependencies area
 
 ```
 dependencies {
-			...
+            ...
     implementation("io.github.astrapi69:icon-img-extensions:$iconImgExtensionsVersion")
-			...
+            ...
 }
 ```
 

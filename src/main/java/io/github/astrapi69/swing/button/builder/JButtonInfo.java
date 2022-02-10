@@ -1,8 +1,8 @@
 /**
  * The MIT License
- * <p>
+ *
  * Copyright (C) 2021 Asterios Raptis
- * <p>
+ *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
@@ -10,10 +10,10 @@
  * distribute, sublicense, and/or sell copies of the Software, and to
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
- * <p>
+ *
  * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
- * <p>
+ *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -37,7 +37,8 @@ import java.awt.event.ActionListener;
 @Data
 @SuperBuilder
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
-public class JButtonInfo {
+public class JButtonInfo
+{
 	String text;
 	Icon icon;
 	String toolTipText;
@@ -48,36 +49,46 @@ public class JButtonInfo {
 	Action action;
 	String actionCommand;
 
-	public JButton toJButton() {
+	public JButton toJButton()
+	{
 		JButton button = new JButton();
 		setFields(button);
 		return button;
 	}
 
-	private void setFields(JButton button) {
+	private void setFields(JButton button)
+	{
 		button.setSelected(selected);
-		if (action != null) {
+		if (action != null)
+		{
 			button.setAction(action);
 		}
-		if(actionCommand != null){
+		if (actionCommand != null)
+		{
 			button.setActionCommand(actionCommand);
 		}
-		if (text != null) {
+		if (text != null)
+		{
 			button.setText(text);
 		}
-		if (icon != null) {
+		if (icon != null)
+		{
 			button.setIcon(icon);
 		}
-		if (toolTipText != null) {
+		if (toolTipText != null)
+		{
 			button.setToolTipText(toolTipText);
 		}
-		if (mnemonic != null) {
+		if (mnemonic != null)
+		{
 			button.setMnemonic(mnemonic);
 		}
-		if (actionListener != null) {
+		if (actionListener != null)
+		{
 			button.addActionListener(actionListener);
 		}
-		if (name != null) {
+		if (name != null)
+		{
 			button.setName(name);
 		}
 	}
