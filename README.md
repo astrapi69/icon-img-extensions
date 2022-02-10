@@ -22,12 +22,6 @@ Creates, converts and scales images and icons files.
 >
 > If you love this project [![donation](https://img.shields.io/badge/donate-❤-ff2244.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GVBTWLRAZ7HB8)
 
-
-# Template from this project
-
-You can derive your java library project from this you can easily and adapt to your specific project if you follow the
-instruction from this [medium blog](https://asterios-raptis.medium.com/new-github-template-repository-feature-ec09afe261b8)
-
 ## Note
 
 No animals were harmed in the making of this library.
@@ -35,6 +29,28 @@ No animals were harmed in the making of this library.
 ## License
 
 The source code comes under the liberal MIT License, making icon-img-extensions great for all types of applications.
+
+## gradle dependency
+
+You can first define the version in the ext section and add than the following gradle dependency to
+your project `build.gradle` if you want to import the core functionality of icon-img-extensions:
+
+define version in file gradle.properties
+```
+iconImgExtensionsVersion=1.2
+```
+
+or in build.gradle ext area
+
+```
+    iconImgExtensionsVersion = "1.2"
+```
+
+then add the dependency to the dependencies area
+
+```
+    implementation("io.github.astrapi69:icon-img-extensions:$iconImgExtensionsVersion")
+```
 
 ## Maven dependency
 
@@ -49,7 +65,7 @@ Than you can add the dependency to your dependencies:
     <properties>
             ...
         <!-- icon-img-extensions version -->
-        <icon-img-extensions.version>1.1</icon-img-extensions.version>
+        <icon-img-extensions.version>1.2</icon-img-extensions.version>
             ...
     </properties>
             ...
@@ -63,36 +79,6 @@ Than you can add the dependency to your dependencies:
             </dependency>
             ...
         </dependencies>
-
-## gradle dependency
-
-You can first define the version in the ext section and add than the following gradle dependency to
-your project `build.gradle` if you want to import the core functionality of icon-img-extensions:
-
-define version in file gradle.properties
-```
-iconImgExtensionsVersion=1.1
-```
-
-or in build.gradle ext area
-
-```
-ext {
-            ...
-    iconImgExtensionsVersion = "1.1"
-            ...
-}
-```
-
-then add the dependency to the dependencies area
-
-```
-dependencies {
-            ...
-    implementation("io.github.astrapi69:icon-img-extensions:$iconImgExtensionsVersion")
-            ...
-}
-```
 
 # Donations
 
