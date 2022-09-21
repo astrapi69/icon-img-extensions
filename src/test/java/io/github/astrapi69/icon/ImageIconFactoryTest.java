@@ -49,7 +49,7 @@ class ImageIconFactoryTest
 	@Test
 	public void testNewImageIcon()
 	{
-		ImageIcon imageIcon = ImageIconFactory.newImageIcon("img/xmas/stars.png");
+		ImageIcon imageIcon = ImageIconFactory.newImageIcon("img/xmas/stars.png", "Desc");
 		assertNotNull(imageIcon);
 	}
 }
