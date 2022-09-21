@@ -305,8 +305,8 @@ public class ImageIconFactory
 		transcoder.transcode(input, null);
 		BufferedImage bufferedImage = transcoder.getImage();
 		return description == null
-				? new ImageIcon(bufferedImage)
-				: new ImageIcon(bufferedImage, description);
+			? new ImageIcon(bufferedImage)
+			: new ImageIcon(bufferedImage, description);
 	}
 
 
