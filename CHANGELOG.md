@@ -1,10 +1,24 @@
 ## Change log
 ----------------------
 
-Version 1.3-SNAPSHOT
+Version 2-SNAPSHOT
 -------------
 
+ADDED:
 
+- new factory methods in ImageIconFactory class with new argument of description
+
+CHANGED:
+
+- update of jdk version 11
+- update gradle to new version 7.5.1
+- update of dependency lombok to new version 1.18.24
+- update of gradle plugin dependency io.freefair.gradle:lombok-plugin to new version 6.5.1
+- update of gradle plugin dependency com.diffplug.spotless:spotless-plugin-gradle to new version 6.11.0
+- update of gradle plugin dependency org.ajoberstar.grgit:grgit-gradle to new version 5.0.0
+- update of dependency jobj-core to new version 7
+- update of test dependency file-worker to new version 11.3
+- update of test dependency junit-jupiter-api and junit-jupiter-engine to new version 5.9.1
 
 Version 1.2
 -------------
