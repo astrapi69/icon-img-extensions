@@ -7,6 +7,7 @@ Version 2-SNAPSHOT
 ADDED:
 
 - new factory methods in ImageIconFactory class with new argument of description
+- extracted sections from build.gradle to its own gradle files for clearness
 
 CHANGED:
 
