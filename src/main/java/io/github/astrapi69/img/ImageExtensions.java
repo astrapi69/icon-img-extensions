@@ -35,14 +35,15 @@ import java.util.logging.Level;
 
 import javax.imageio.ImageIO;
 
-import lombok.extern.java.Log;
-
 import org.imgscalr.Scalr;
 import org.imgscalr.Scalr.Method;
 import org.imgscalr.Scalr.Mode;
 
+import lombok.extern.java.Log;
+
 /**
- * The class {@link ImageExtensions}.
+ * The class {@link ImageExtensions} provides extension methods for several operations with
+ * {@link BufferedImage} objects
  */
 @Log
 public class ImageExtensions

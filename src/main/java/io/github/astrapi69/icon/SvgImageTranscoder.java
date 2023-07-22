@@ -26,10 +26,10 @@ package io.github.astrapi69.icon;
 
 import java.awt.image.BufferedImage;
 
-import lombok.Getter;
-
 import org.apache.batik.transcoder.TranscoderOutput;
 import org.apache.batik.transcoder.image.ImageTranscoder;
+
+import lombok.Getter;
 
 /**
  * The class {@link SvgImageTranscoder} can transcode a svg image
@@ -46,9 +46,9 @@ public class SvgImageTranscoder extends ImageTranscoder
 	 * {@inheritDoc}
 	 */
 	@Override
-	public BufferedImage createImage(int w, int h)
+	public BufferedImage createImage(int width, int height)
 	{
-		image = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
+		image = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
 		return image;
 	}
 

@@ -1,6 +1,27 @@
 ## Change log
 ----------------------
 
+Version 2.1
+-------------
+
+ADDED:
+
+- new extension class IconExtensions for provide extension methods for Icon objects
+- new extension method in class IconExtensions for convert an Icon object to an Image object
+
+CHANGED:
+
+- update gradle to new version 8.3-rc-1
+- update of dependency lombok to new version 1.18.28
+- update of gradle plugin dependency io.freefair.gradle:lombok-plugin to new version 8.1.0
+- update of gradle plugin dependency com.github.ben-manes.versions.gradle.plugin to new version 0.47.0
+- update of gradle plugin dependency org.ajoberstar.grgit:grgit-gradle to new version 5.2.0
+- update of gradle plugin dependency com.diffplug.spotless:spotless-plugin-gradle to new version 6.20.0
+- update of dependency jobj-core to new version 7.1
+- update of dependencies batik-* to new version 1.16
+- update of test dependency file-worker to new version 11.6
+- update of test dependency junit-jupiter-api and junit-jupiter-engine to new version 5.10.0-RC2
+
 Version 2
 -------------
 

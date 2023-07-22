@@ -24,14 +24,14 @@
  */
 package io.github.astrapi69.icon;
 
-import java.awt.Image;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.InputStream;
 import java.net.URL;
 
 import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
+import javax.swing.*;
 
 import org.apache.batik.anim.dom.SVGDOMImplementation;
 import org.apache.batik.transcoder.TranscoderException;
