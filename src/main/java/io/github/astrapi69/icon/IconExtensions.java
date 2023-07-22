@@ -24,32 +24,39 @@
  */
 package io.github.astrapi69.icon;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-
-import java.util.List;
+import java.awt.*;
+import java.awt.image.BufferedImage;
 
 import javax.swing.*;
 
-import org.junit.jupiter.api.Test;
-
-import io.github.astrapi69.img.Direction;
-import io.github.astrapi69.img.ImageExtensions;
-
 /**
- * The unit test class for the class {@link ImageIconFactory}
- *
- * @author Asterios Raptis
+ * The class {@link IconExtensions} provides extension methods for operations with {@link Icon}
+ * objects
  */
-class ImageIconFactoryTest
+public class IconExtensions
 {
-
 	/**
-	 * Test for method {{@link ImageExtensions#concatenateImages(List, int, int, int, Direction)}
+	 * Converts the given {@link Icon} object to a {@link Image} object
+	 * 
+	 * @param icon
+	 *            the icon to convert
+	 * @return the {@link Image} object
 	 */
-	@Test
-	public void testNewImageIcon()
+	public static Image toImage(Icon icon)
 	{
-		ImageIcon imageIcon = ImageIconFactory.newImageIcon("img/xmas/stars.png", "Desc");
-		assertNotNull(imageIcon);
+		if (icon instanceof ImageIcon)
+		{
+			return ((ImageIcon)icon).getImage();
+		}
+		GraphicsEnvironment graphicsEnvironment = GraphicsEnvironment.getLocalGraphicsEnvironment();
+		GraphicsDevice graphicsDevice = graphicsEnvironment.getDefaultScreenDevice();
+		GraphicsConfiguration graphicsConfiguration = graphicsDevice.getDefaultConfiguration();
+		BufferedImage bufferedImage = graphicsConfiguration
+			.createCompatibleImage(icon.getIconWidth(), icon.getIconHeight());
+		Graphics2D graphics2D = bufferedImage.createGraphics();
+		icon.paintIcon(null, graphics2D, 0, 0);
+		graphics2D.dispose();
+		return bufferedImage;
 	}
+
 }

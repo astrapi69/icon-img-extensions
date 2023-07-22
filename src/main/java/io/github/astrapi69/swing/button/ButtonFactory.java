@@ -24,10 +24,10 @@
  */
 package io.github.astrapi69.swing.button;
 
-import javax.swing.JButton;
+import javax.swing.*;
 
-import lombok.NonNull;
 import io.github.astrapi69.swing.button.builder.JButtonInfo;
+import lombok.NonNull;
 
 /**
  * A factory {@link ButtonFactory} provides factory methods for create {@link JButton} objects

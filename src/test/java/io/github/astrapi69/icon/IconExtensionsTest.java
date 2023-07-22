@@ -26,30 +26,27 @@ package io.github.astrapi69.icon;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import java.util.List;
+import java.awt.*;
 
 import javax.swing.*;
 
 import org.junit.jupiter.api.Test;
 
-import io.github.astrapi69.img.Direction;
-import io.github.astrapi69.img.ImageExtensions;
-
 /**
- * The unit test class for the class {@link ImageIconFactory}
- *
- * @author Asterios Raptis
+ * Test class for the class {@link IconExtensions}
  */
-class ImageIconFactoryTest
+class IconExtensionsTest
 {
 
 	/**
-	 * Test for method {{@link ImageExtensions#concatenateImages(List, int, int, int, Direction)}
+	 * Test method for {@link IconExtensions#toImage(Icon)}
 	 */
 	@Test
-	public void testNewImageIcon()
+	void toImage()
 	{
-		ImageIcon imageIcon = ImageIconFactory.newImageIcon("img/xmas/stars.png", "Desc");
-		assertNotNull(imageIcon);
+		Icon fileIcon = UIManager.getIcon("FileView.fileIcon");
+		Image image = IconExtensions.toImage(fileIcon);
+		assertNotNull(image);
 	}
+
 }
