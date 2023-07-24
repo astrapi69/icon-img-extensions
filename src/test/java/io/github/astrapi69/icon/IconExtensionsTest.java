@@ -25,12 +25,19 @@
 package io.github.astrapi69.icon;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.awt.*;
+import java.io.File;
+import java.io.IOException;
 
 import javax.swing.*;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+
+import io.github.astrapi69.file.delete.DeleteFileExtensions;
+import io.github.astrapi69.file.search.PathFinder;
 
 /**
  * Test class for the class {@link IconExtensions}
@@ -47,6 +54,28 @@ class IconExtensionsTest
 		Icon fileIcon = UIManager.getIcon("FileView.fileIcon");
 		Image image = IconExtensions.toImage(fileIcon);
 		assertNotNull(image);
+	}
+
+	/**
+	 * Test method for {@link IconExtensions#storeIcon(Icon, String, File)}
+	 *
+	 * @throws IOException
+	 *             Signals that an I/O exception has occurred
+	 */
+	@Test
+	@Disabled("because this test case fails on github actions. Locally it runs successfully.")
+	void storeIcon() throws IOException
+	{
+		final File imgDir = new File(PathFinder.getSrcTestResourcesDir(), "img");
+
+		File xmas = new File(imgDir, "xmas");
+		File outputFile = new File(xmas, "fileView.png");
+		Icon fileIcon = UIManager.getIcon("FileView.fileIcon");
+		boolean actual = IconExtensions.storeIcon(fileIcon, "png", outputFile);
+		assertTrue(actual);
+		assertTrue(outputFile.exists());
+		DeleteFileExtensions.delete(outputFile);
+
 	}
 
 }

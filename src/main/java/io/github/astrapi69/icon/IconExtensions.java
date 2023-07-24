@@ -26,8 +26,11 @@ package io.github.astrapi69.icon;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.File;
 
 import javax.swing.*;
+
+import io.github.astrapi69.img.ImageExtensions;
 
 /**
  * The class {@link IconExtensions} provides extension methods for operations with {@link Icon}
@@ -35,6 +38,7 @@ import javax.swing.*;
  */
 public class IconExtensions
 {
+
 	/**
 	 * Converts the given {@link Icon} object to a {@link Image} object
 	 * 
@@ -47,6 +51,54 @@ public class IconExtensions
 		if (icon instanceof ImageIcon)
 		{
 			return ((ImageIcon)icon).getImage();
+		}
+		return toBufferedImage(icon);
+	}
+
+	/**
+	 * Stores the given {@link Icon} object to the given {@link File} object in the given format
+	 * name
+	 *
+	 * @param icon
+	 *            the icon to store
+	 * @param formatName
+	 *            the format name examples 'png' or 'jpg' description: Standard BMP Image Writer
+	 *            format names: [bmp, BMP] description: Standard JPEG Image Writer format names:
+	 *            [JPEG, jpeg, JPG, jpg] description: Standard WBMP Image Writer format names:
+	 *            [wbmp, WBMP] description: Standard PNG image writer format names: [png, PNG]
+	 *            description: Standard GIF image writer format names: [gif, GIF] description:
+	 *            Standard TIFF image writer format names: [tif, TIF, tiff, TIFF]
+	 * @param outputfile
+	 *            the output file
+	 * @return 's true if the given {@link Icon} object is stored to the given {@link File} object
+	 *         otherwise false
+	 */
+	public static boolean storeIcon(Icon icon, String formatName, File outputfile)
+	{
+		try
+		{
+			ImageExtensions.write(toBufferedImage(icon), formatName, outputfile);
+			return true;
+		}
+		catch (Exception e)
+		{
+			return false;
+		}
+	}
+
+	/**
+	 * Converts the given {@link Icon} object to a {@link BufferedImage} object
+	 *
+	 * @param icon
+	 *            the icon to convert
+	 * @return the {@link BufferedImage} object
+	 */
+	public static BufferedImage toBufferedImage(Icon icon)
+	{
+		if (icon instanceof ImageIcon)
+		{
+			Image image = ((ImageIcon)icon).getImage();
+			return ImageExtensions.toBufferedImage(image);
 		}
 		GraphicsEnvironment graphicsEnvironment = GraphicsEnvironment.getLocalGraphicsEnvironment();
 		GraphicsDevice graphicsDevice = graphicsEnvironment.getDefaultScreenDevice();

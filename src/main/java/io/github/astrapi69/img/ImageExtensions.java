@@ -24,6 +24,7 @@
  */
 package io.github.astrapi69.img;
 
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -34,6 +35,7 @@ import java.util.List;
 import java.util.logging.Level;
 
 import javax.imageio.ImageIO;
+import javax.swing.*;
 
 import org.imgscalr.Scalr;
 import org.imgscalr.Scalr.Method;
@@ -48,6 +50,18 @@ import lombok.extern.java.Log;
 @Log
 public class ImageExtensions
 {
+
+	/**
+	 * Converts the given {@link Image} object to a {@link Icon} object
+	 *
+	 * @param image
+	 *            the image to convert
+	 * @return the {@link Icon} object
+	 */
+	public static Icon toIcon(Image image)
+	{
+		return new ImageIcon(image);
+	}
 
 	/**
 	 * Generates a random {@link BufferedImage} with the given parameters.
@@ -455,5 +469,32 @@ public class ImageExtensions
 	{
 		ImageIO.write(bufferedImage, formatName, outputfile);
 		return outputfile;
+	}
+
+	/**
+	 * Converts the given {@link Image} object to a {@link BufferedImage} object
+	 *
+	 * @param image
+	 *            the image to convert
+	 * @return the {@link BufferedImage} object
+	 */
+	public static BufferedImage toBufferedImage(Image image)
+	{
+		if (image instanceof BufferedImage)
+		{
+			return (BufferedImage)image;
+		}
+
+		GraphicsEnvironment graphicsEnvironment = GraphicsEnvironment.getLocalGraphicsEnvironment();
+		GraphicsDevice graphicsDevice = graphicsEnvironment.getDefaultScreenDevice();
+		GraphicsConfiguration graphicsConfiguration = graphicsDevice.getDefaultConfiguration();
+
+		BufferedImage bufferedImage = graphicsConfiguration.createCompatibleImage(
+			image.getWidth(null), image.getHeight(null), BufferedImage.TYPE_INT_ARGB);
+
+		Graphics2D graphics2D = bufferedImage.createGraphics();
+		graphics2D.drawImage(image, 0, 0, null);
+		graphics2D.dispose();
+		return bufferedImage;
 	}
 }

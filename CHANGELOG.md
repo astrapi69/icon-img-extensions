@@ -1,6 +1,20 @@
 ## Change log
 ----------------------
 
+Version 2.2
+-------------
+
+ADDED:
+
+- new extension method in class ImageExtensions for convert an Image object to an Icon object
+- new extension method in class ImageExtensions that converts an Image object to a BufferedImage object
+- new extension method IconExtensions for store a given Icon object to a given file object
+- new extension method IconExtensions that converts an Icon object to a BufferedImage object
+
+CHANGED:
+
+- update of test dependency junit-jupiter-api and junit-jupiter-engine to new version 5.10.0
+
 Version 2.1
 -------------
 
