@@ -25,8 +25,10 @@
 package io.github.astrapi69.img;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -34,6 +36,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.imageio.ImageIO;
+import javax.swing.*;
 
 import org.junit.jupiter.api.Test;
 
@@ -49,6 +52,26 @@ import io.github.astrapi69.lang.ClassExtensions;
  */
 class ImageExtensionsTest
 {
+
+
+	/**
+	 * Test for method {{@link ImageExtensions#toIcon(Image)}
+	 *
+	 * @throws IOException
+	 *             Signals that an I/O exception has occurred
+	 */
+	@Test
+	public void testToIcon() throws IOException
+	{
+
+		Icon actual;
+
+		final BufferedImage img1 = ImageIO
+			.read(ClassExtensions.getResourceAsStream("img/xmas/bell.png"));
+
+		actual = ImageExtensions.toIcon(img1);
+		assertNotNull(actual);
+	}
 
 	/**
 	 * Test for method {{@link ImageExtensions#concatenateImages(List, int, int, int, Direction)}
