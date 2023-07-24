@@ -77,7 +77,7 @@ class ImageExtensionsTest
 	 * Test for method {{@link ImageExtensions#concatenateImages(List, int, int, int, Direction)}
 	 *
 	 * @throws IOException
-	 *             Signals that an I/O exception has occurred.
+	 *             Signals that an I/O exception has occurred
 	 */
 	@Test
 	public void testConcatenateImages() throws IOException
