@@ -69,7 +69,39 @@ public class ImageExtensions
 	}
 
 	/**
-	 * Generates a random {@link BufferedImage} with the given parameters.
+	 * Generates a new {@link BufferedImage} object with the given parameters
+	 *
+	 * @param width
+	 *            the width
+	 * @param height
+	 *            the height
+	 *
+	 * @return The new {@link BufferedImage} object
+	 */
+	public BufferedImage newBufferedImage(int width, int height)
+	{
+		return newBufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+	}
+
+	/**
+	 * Generates a new {@link BufferedImage} object with the given parameters
+	 *
+	 * @param width
+	 *            the width
+	 * @param height
+	 *            the height
+	 * @param imageType
+	 *            the type of the image
+	 *
+	 * @return The new {@link BufferedImage} object
+	 */
+	public BufferedImage newBufferedImage(int width, int height, int imageType)
+	{
+		return new BufferedImage(width, height, imageType);
+	}
+
+	/**
+	 * Generates a random {@link BufferedImage} object with the given parameters.
 	 *
 	 * @param width
 	 *            the width

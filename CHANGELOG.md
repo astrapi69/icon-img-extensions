@@ -7,6 +7,7 @@ Version 2.3-SNAPSHOT
 ADDED:
 
 - new factory method in class ImageIconFactory that creates a BufferedImage object with custom width, height and a textual description for the image
+- new factory methods for create BufferedImage in class ImageExtensions
 
 CHANGED:
 
