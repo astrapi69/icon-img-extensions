@@ -29,6 +29,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import javax.swing.JLabel;
 
 import org.junit.jupiter.api.Test;
+import org.meanbean.test.BeanTester;
 
 /**
  * Test class for the class {@link StringIcon}

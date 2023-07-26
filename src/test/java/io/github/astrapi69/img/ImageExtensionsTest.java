@@ -39,10 +39,12 @@ import javax.imageio.ImageIO;
 import javax.swing.Icon;
 
 import org.junit.jupiter.api.Test;
+import org.meanbean.test.BeanTester;
 
 import io.github.astrapi69.file.create.FileFactory;
 import io.github.astrapi69.file.delete.DeleteFileExtensions;
 import io.github.astrapi69.file.search.PathFinder;
+import io.github.astrapi69.icon.ImageIconFactory;
 import io.github.astrapi69.lang.ClassExtensions;
 
 /**
@@ -52,7 +54,6 @@ import io.github.astrapi69.lang.ClassExtensions;
  */
 class ImageExtensionsTest
 {
-
 
 	/**
 	 * Test for method {{@link ImageExtensions#toIcon(Image)}
@@ -208,6 +209,16 @@ class ImageExtensionsTest
 		assertEquals(expected, actual);
 
 		DeleteFileExtensions.delete(outputfile);
+	}
+
+	/**
+	 * Test method for {@link ImageExtensions} with {@link BeanTester}
+	 */
+	@Test
+	public void testWithBeanTester()
+	{
+		final BeanTester beanTester = new BeanTester();
+		beanTester.testBean(ImageExtensions.class);
 	}
 
 }

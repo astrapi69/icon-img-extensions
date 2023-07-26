@@ -31,7 +31,9 @@ import javax.swing.JButton;
 import javax.swing.UIManager;
 
 import org.junit.jupiter.api.Test;
+import org.meanbean.test.BeanTester;
 
+import io.github.astrapi69.img.ImageExtensions;
 import io.github.astrapi69.swing.button.builder.JButtonInfo;
 
 /**
@@ -80,5 +82,15 @@ class ButtonFactoryTest
 		buttonInfo = JButtonInfo.builder().build();
 		actual = ButtonFactory.newJButton(buttonInfo);
 		assertNotNull(actual);
+	}
+
+	/**
+	 * Test method for {@link ButtonFactory} with {@link BeanTester}
+	 */
+	@Test
+	public void testWithBeanTester()
+	{
+		final BeanTester beanTester = new BeanTester();
+		beanTester.testBean(ButtonFactory.class);
 	}
 }

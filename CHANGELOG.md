@@ -4,6 +4,15 @@
 Version 2.3-SNAPSHOT
 -------------
 
+ADDED:
+
+- new factory method in class ImageIconFactory that creates a BufferedImage object with custom width, height and a textual description for the image
+
+CHANGED:
+
+- update of test dependency 'com.github.meanbeanlib:meanbean' to new version 3.0.0-M9
+- code coverage increased
+
 Version 2.2
 -------------
 

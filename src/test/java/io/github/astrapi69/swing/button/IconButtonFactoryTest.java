@@ -31,6 +31,7 @@ import javax.swing.JButton;
 import javax.swing.UIManager;
 
 import org.junit.jupiter.api.Test;
+import org.meanbean.test.BeanTester;
 
 /**
  * The unit test class for the class {@link IconButtonFactory}
@@ -139,5 +140,15 @@ class IconButtonFactoryTest
 		fileIcon = UIManager.getIcon("FileView.fileIcon");
 		actual = IconButtonFactory.newIconButton(fileIcon, toolTipText, text, actionCommand);
 		assertNotNull(actual);
+	}
+
+	/**
+	 * Test method for {@link IconButtonFactory} with {@link BeanTester}
+	 */
+	@Test
+	public void testWithBeanTester()
+	{
+		final BeanTester beanTester = new BeanTester();
+		beanTester.testBean(IconButtonFactory.class);
 	}
 }

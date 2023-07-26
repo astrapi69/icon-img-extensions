@@ -271,10 +271,10 @@ public class ImageIconFactory
 
 
 	/**
-	 * Factory method for create a new {@link ImageIcon}
+	 * Factory method for create a new {@link ImageIcon} object from a svg formatted image
 	 *
 	 * @param imagePath
-	 *            the image path
+	 *            the svg image path
 	 * @param targetWidth
 	 *            the target width
 	 * @param targetHeight
@@ -283,13 +283,36 @@ public class ImageIconFactory
 	 *            the textual description of the image
 	 * @throws TranscoderException
 	 *             is thrown when a transcoder is not able to transcode its input
-	 * @return the new {@link ImageIcon}
+	 * @return the new {@link ImageIcon} object
 	 */
 	public static ImageIcon newImageIconFromSVG(final String imagePath, final float targetWidth,
 		final float targetHeight, String description) throws TranscoderException
 	{
 		InputStream resourceAsStream = ClassExtensions.getResourceAsStream(imagePath);
-		TranscoderInput input = new TranscoderInput(resourceAsStream);
+		return newImageIconFromSVG(resourceAsStream, targetWidth, targetHeight, description);
+	}
+
+
+	/**
+	 * Factory method for create a new {@link ImageIcon} object from a svg formatted image
+	 *
+	 * @param svgImageAsStream
+	 *            the svg image stream
+	 * @param targetWidth
+	 *            the target width
+	 * @param targetHeight
+	 *            the target height
+	 * @param description
+	 *            the textual description of the image
+	 * @throws TranscoderException
+	 *             is thrown when a transcoder is not able to transcode its input
+	 * @return the new {@link ImageIcon} object
+	 */
+	public static ImageIcon newImageIconFromSVG(final InputStream svgImageAsStream,
+		final float targetWidth, final float targetHeight, String description)
+		throws TranscoderException
+	{
+		TranscoderInput input = new TranscoderInput(svgImageAsStream);
 		SvgImageTranscoder transcoder = new SvgImageTranscoder();
 		SVGDOMImplementation impl = (SVGDOMImplementation)SVGDOMImplementation
 			.getDOMImplementation();
