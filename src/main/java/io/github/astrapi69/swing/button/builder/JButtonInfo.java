@@ -26,7 +26,9 @@ package io.github.astrapi69.swing.button.builder;
 
 import java.awt.event.ActionListener;
 
-import javax.swing.*;
+import javax.swing.Action;
+import javax.swing.Icon;
+import javax.swing.JButton;
 
 import lombok.AccessLevel;
 import lombok.Data;

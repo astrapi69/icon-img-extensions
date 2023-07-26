@@ -22,28 +22,63 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package io.github.astrapi69.icon;
+package io.github.astrapi69.swing.button;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 
-import javax.swing.JLabel;
+import javax.swing.Icon;
+import javax.swing.JButton;
+import javax.swing.UIManager;
 
 import org.junit.jupiter.api.Test;
 
+import io.github.astrapi69.swing.button.builder.JButtonInfo;
+
 /**
- * Test class for the class {@link StringIcon}
+ * The unit test class for the class {@link ButtonFactory}
+ *
+ * @author Asterios Raptis
  */
-public class StringIconTest
+class ButtonFactoryTest
 {
 
 	/**
-	 * Test for constructor of {{@link StringIcon}
+	 * Test for method {{@link ButtonFactory#newJButton()}
 	 */
 	@Test
-	public void testNewStringIcon()
+	void newJButton()
 	{
-		JLabel label = new JLabel();
-		StringIcon actual = new StringIcon(label, "foo");
+		JButton actual;
+
+		actual = ButtonFactory.newJButton();
+		assertNotNull(actual);
+	}
+
+	/**
+	 * Test for method {{@link ButtonFactory#newJButton(String)}
+	 */
+	@Test
+	void testNewJButtonWithText()
+	{
+		JButton actual;
+		String text;
+
+		text = "Click me";
+		actual = ButtonFactory.newJButton(text);
+		assertNotNull(actual);
+	}
+
+	/**
+	 * Test for method {{@link ButtonFactory#newJButton(JButtonInfo)}
+	 */
+	@Test
+	void testNewJButtonWithJButtonInfo()
+	{
+		JButton actual;
+		JButtonInfo buttonInfo;
+
+		buttonInfo = JButtonInfo.builder().build();
+		actual = ButtonFactory.newJButton(buttonInfo);
 		assertNotNull(actual);
 	}
 }

@@ -24,7 +24,7 @@
  */
 package io.github.astrapi69.swing.button;
 
-import javax.swing.*;
+import javax.swing.JButton;
 
 import io.github.astrapi69.swing.button.builder.JButtonInfo;
 import lombok.NonNull;
