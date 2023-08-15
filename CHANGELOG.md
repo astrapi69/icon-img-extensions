@@ -1,7 +1,7 @@
 ## Change log
 ----------------------
 
-Version 2.3-SNAPSHOT
+Version 3-SNAPSHOT
 -------------
 
 ADDED:
@@ -12,6 +12,7 @@ ADDED:
 
 CHANGED:
 
+- update of jdk version 17
 - update gradle to new version 8.3-rc-4
 - update of gradle plugin dependency io.freefair.gradle:lombok-plugin to new version 8.2.2
 - update of test dependency 'com.github.meanbeanlib:meanbean' to new version 3.0.0-M9
