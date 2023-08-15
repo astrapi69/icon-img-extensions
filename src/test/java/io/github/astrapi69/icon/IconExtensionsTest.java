@@ -27,14 +27,16 @@ package io.github.astrapi69.icon;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import java.awt.*;
+import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
 
-import javax.swing.*;
+import javax.swing.Icon;
+import javax.swing.UIManager;
 
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.meanbean.test.BeanTester;
 
 import io.github.astrapi69.file.delete.DeleteFileExtensions;
 import io.github.astrapi69.file.search.PathFinder;
@@ -66,7 +68,7 @@ class IconExtensionsTest
 	@Disabled("because this test case fails on github actions. Locally it runs successfully.")
 	void storeIcon() throws IOException
 	{
-		final File imgDir = new File(PathFinder.getSrcTestResourcesDir(), "img");
+		File imgDir = new File(PathFinder.getSrcTestResourcesDir(), "img");
 
 		File xmas = new File(imgDir, "xmas");
 		File outputFile = new File(xmas, "fileView.png");
@@ -76,6 +78,16 @@ class IconExtensionsTest
 		assertTrue(outputFile.exists());
 		DeleteFileExtensions.delete(outputFile);
 
+	}
+
+	/**
+	 * Test method for {@link IconExtensions} with {@link BeanTester}
+	 */
+	@Test
+	public void testWithBeanTester()
+	{
+		final BeanTester beanTester = new BeanTester();
+		beanTester.testBean(IconExtensions.class);
 	}
 
 }

@@ -24,7 +24,11 @@
  */
 package io.github.astrapi69.img;
 
-import java.awt.*;
+import java.awt.Graphics2D;
+import java.awt.GraphicsConfiguration;
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
+import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -35,7 +39,8 @@ import java.util.List;
 import java.util.logging.Level;
 
 import javax.imageio.ImageIO;
-import javax.swing.*;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 
 import org.imgscalr.Scalr;
 import org.imgscalr.Scalr.Method;
@@ -64,7 +69,39 @@ public class ImageExtensions
 	}
 
 	/**
-	 * Generates a random {@link BufferedImage} with the given parameters.
+	 * Generates a new {@link BufferedImage} object with the given parameters
+	 *
+	 * @param width
+	 *            the width
+	 * @param height
+	 *            the height
+	 *
+	 * @return The new {@link BufferedImage} object
+	 */
+	public BufferedImage newBufferedImage(int width, int height)
+	{
+		return newBufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+	}
+
+	/**
+	 * Generates a new {@link BufferedImage} object with the given parameters
+	 *
+	 * @param width
+	 *            the width
+	 * @param height
+	 *            the height
+	 * @param imageType
+	 *            the type of the image
+	 *
+	 * @return The new {@link BufferedImage} object
+	 */
+	public BufferedImage newBufferedImage(int width, int height, int imageType)
+	{
+		return new BufferedImage(width, height, imageType);
+	}
+
+	/**
+	 * Generates a random {@link BufferedImage} object with the given parameters.
 	 *
 	 * @param width
 	 *            the width

@@ -26,13 +26,18 @@ package io.github.astrapi69.swing.button.builder;
 
 import java.awt.event.ActionListener;
 
-import javax.swing.*;
+import javax.swing.Action;
+import javax.swing.Icon;
+import javax.swing.JButton;
 
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
 
+/**
+ * The class {@link JButtonInfo} is the data model for the creation of {@link JButton} objects
+ */
 @Data
 @SuperBuilder
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)

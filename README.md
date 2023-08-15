@@ -37,16 +37,16 @@ your project `build.gradle` if you want to import the core functionality of icon
 
 define version in file gradle.properties
 ```
-iconImgExtensionsVersion=2.2
+iconImgExtensionsVersion=3
 ```
 
 or in build.gradle ext area
 
 ```
-    iconImgExtensionsVersion = "2.2"
+    iconImgExtensionsVersion = "3"
 ```
 
-then add the dependency to the dependencies area
+then add the dependency to the 'dependencies' area
 
 ```
     implementation("io.github.astrapi69:icon-img-extensions:$iconImgExtensionsVersion")
@@ -65,7 +65,7 @@ Than you can add the dependency to your dependencies:
     <properties>
             ...
         <!-- icon-img-extensions version -->
-        <icon-img-extensions.version>2.2</icon-img-extensions.version>
+        <icon-img-extensions.version>3</icon-img-extensions.version>
             ...
     </properties>
             ...

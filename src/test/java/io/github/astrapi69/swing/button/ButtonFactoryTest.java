@@ -24,50 +24,73 @@
  */
 package io.github.astrapi69.swing.button;
 
-import javax.swing.JButton;
+import static org.junit.jupiter.api.Assertions.*;
 
+import javax.swing.Icon;
+import javax.swing.JButton;
+import javax.swing.UIManager;
+
+import org.junit.jupiter.api.Test;
+import org.meanbean.test.BeanTester;
+
+import io.github.astrapi69.img.ImageExtensions;
 import io.github.astrapi69.swing.button.builder.JButtonInfo;
-import lombok.NonNull;
 
 /**
- * A factory {@link ButtonFactory} provides factory methods for create {@link JButton} objects
+ * The unit test class for the class {@link ButtonFactory}
+ *
+ * @author Asterios Raptis
  */
-public class ButtonFactory
+class ButtonFactoryTest
 {
 
 	/**
-	 * Factory method for create a <code>JButton</code>
-	 *
-	 * @return the new {@link JButton} object
+	 * Test for method {{@link ButtonFactory#newJButton()}
 	 */
-	public static JButton newJButton()
+	@Test
+	void newJButton()
 	{
-		return JButtonInfo.builder().build().toJButton();
+		JButton actual;
+
+		actual = ButtonFactory.newJButton();
+		assertNotNull(actual);
 	}
 
 	/**
-	 * Factory method for create a <code>JButton</code> with the given text
-	 *
-	 * @param text
-	 *            the text for the button
-	 * @return the new {@link JButton} object
+	 * Test for method {{@link ButtonFactory#newJButton(String)}
 	 */
-	public static JButton newJButton(final @NonNull String text)
+	@Test
+	void testNewJButtonWithText()
 	{
-		return JButtonInfo.builder().text(text).build().toJButton();
+		JButton actual;
+		String text;
+
+		text = "Click me";
+		actual = ButtonFactory.newJButton(text);
+		assertNotNull(actual);
 	}
 
 	/**
-	 * Factory method for create a <code>JButton</code> with the given <code>JButtonInfo</code>
-	 * object for build a <code>JButton</code>
-	 *
-	 * @param buttonInfo
-	 *            the information for build a <code>JButton</code>.
-	 * @return the new {@link JButton} object
+	 * Test for method {{@link ButtonFactory#newJButton(JButtonInfo)}
 	 */
-	public static JButton newJButton(final @NonNull JButtonInfo buttonInfo)
+	@Test
+	void testNewJButtonWithJButtonInfo()
 	{
-		return buttonInfo.toJButton();
+		JButton actual;
+		JButtonInfo buttonInfo;
+
+		buttonInfo = JButtonInfo.builder().build();
+		actual = ButtonFactory.newJButton(buttonInfo);
+		assertNotNull(actual);
 	}
 
+	/**
+	 * Test method for {@link ButtonFactory} with {@link BeanTester}
+	 */
+	@Test
+	public void testWithBeanTester()
+	{
+		final BeanTester beanTester = new BeanTester();
+		beanTester.testBean(ButtonFactory.class);
+	}
 }
