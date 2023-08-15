@@ -37,6 +37,7 @@ import java.util.Map;
 import javax.swing.Icon;
 import javax.swing.JComponent;
 
+import io.github.astrapi69.icon.model.IconDimensions;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NonNull;

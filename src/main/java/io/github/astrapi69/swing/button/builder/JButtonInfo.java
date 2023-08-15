@@ -35,6 +35,9 @@ import lombok.Data;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
 
+/**
+ * The class {@link JButtonInfo} is the data model for the creation of {@link JButton} objects
+ */
 @Data
 @SuperBuilder
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)

@@ -8,11 +8,13 @@ ADDED:
 
 - new factory method in class ImageIconFactory that creates a BufferedImage object with custom width, height and a textual description for the image
 - new factory methods for create BufferedImage in class ImageExtensions
+- new package-info classes for javadoc
 
 CHANGED:
 
 - update of test dependency 'com.github.meanbeanlib:meanbean' to new version 3.0.0-M9
 - code coverage increased
+- moved class IconDimensions to package 'io.github.astrapi69.icon.model'
 
 Version 2.2
 -------------
