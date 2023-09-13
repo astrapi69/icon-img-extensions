@@ -2,9 +2,6 @@ dependencies {
     compileOnly("org.projectlombok:lombok:$lombokVersion")
     annotationProcessor("org.projectlombok:lombok:$lombokVersion")
 
-    implementation("org.apache.xmlgraphics:batik-transcoder:$batikVersion")
-    implementation("org.apache.xmlgraphics:batik-codec:$batikVersion")
-    implementation("org.imgscalr:imgscalr-lib:$imgscalrLibVersion")
     implementation("io.github.astrapi69:jobj-core:$jobjCoreVersion")
     implementation("io.github.astrapi69:throwable:$throwableVersion")
 

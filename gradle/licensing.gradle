@@ -15,6 +15,7 @@ license {
               "**/*.html",
               "**/*.jsp",
               "**/*.jpa",
+              "**/package-info.java",
               "**/*.sql",
               "**/*.properties",
               "**/*.bat",

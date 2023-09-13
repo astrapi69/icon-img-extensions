@@ -27,18 +27,10 @@ package io.github.astrapi69.icon;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.InputStream;
 import java.net.URL;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
-
-import org.apache.batik.anim.dom.SVGDOMImplementation;
-import org.apache.batik.transcoder.TranscoderException;
-import org.apache.batik.transcoder.TranscoderInput;
-import org.apache.batik.transcoder.TranscodingHints;
-import org.apache.batik.transcoder.image.ImageTranscoder;
-import org.apache.batik.util.SVGConstants;
 
 import io.github.astrapi69.lang.ClassExtensions;
 import io.github.astrapi69.throwable.RuntimeExceptionDecorator;
@@ -48,25 +40,6 @@ import io.github.astrapi69.throwable.RuntimeExceptionDecorator;
  */
 public class ImageIconFactory
 {
-
-	/**
-	 * Factory method for create a new {@link ImageIcon}
-	 *
-	 * @param imagePath
-	 *            the image path
-	 * @param targetWidth
-	 *            the target width
-	 * @param targetHeight
-	 *            the target height
-	 * @throws TranscoderException
-	 *             is thrown when a transcoder is not able to transcode its input
-	 * @return the new {@link ImageIcon}
-	 */
-	public static ImageIcon newImageIconFromSVG(final String imagePath, final float targetWidth,
-		final float targetHeight) throws TranscoderException
-	{
-		return newImageIconFromSVG(imagePath, targetWidth, targetHeight, null);
-	}
 
 	/**
 	 * Factory method for create a new {@link ImageIcon} from the given {@link File} object
@@ -268,70 +241,6 @@ public class ImageIconFactory
 	{
 		return newImageIcon(image.getAbsolutePath(), false, description);
 	}
-
-
-	/**
-	 * Factory method for create a new {@link ImageIcon} object from a svg formatted image
-	 *
-	 * @param imagePath
-	 *            the svg image path
-	 * @param targetWidth
-	 *            the target width
-	 * @param targetHeight
-	 *            the target height
-	 * @param description
-	 *            the textual description of the image
-	 * @throws TranscoderException
-	 *             is thrown when a transcoder is not able to transcode its input
-	 * @return the new {@link ImageIcon} object
-	 */
-	public static ImageIcon newImageIconFromSVG(final String imagePath, final float targetWidth,
-		final float targetHeight, String description) throws TranscoderException
-	{
-		InputStream resourceAsStream = ClassExtensions.getResourceAsStream(imagePath);
-		return newImageIconFromSVG(resourceAsStream, targetWidth, targetHeight, description);
-	}
-
-
-	/**
-	 * Factory method for create a new {@link ImageIcon} object from a svg formatted image
-	 *
-	 * @param svgImageAsStream
-	 *            the svg image stream
-	 * @param targetWidth
-	 *            the target width
-	 * @param targetHeight
-	 *            the target height
-	 * @param description
-	 *            the textual description of the image
-	 * @throws TranscoderException
-	 *             is thrown when a transcoder is not able to transcode its input
-	 * @return the new {@link ImageIcon} object
-	 */
-	public static ImageIcon newImageIconFromSVG(final InputStream svgImageAsStream,
-		final float targetWidth, final float targetHeight, String description)
-		throws TranscoderException
-	{
-		TranscoderInput input = new TranscoderInput(svgImageAsStream);
-		SvgImageTranscoder transcoder = new SvgImageTranscoder();
-		SVGDOMImplementation impl = (SVGDOMImplementation)SVGDOMImplementation
-			.getDOMImplementation();
-		TranscodingHints hints = new TranscodingHints();
-		hints.put(ImageTranscoder.KEY_WIDTH, targetWidth);
-		hints.put(ImageTranscoder.KEY_HEIGHT, targetHeight);
-		hints.put(ImageTranscoder.KEY_DOM_IMPLEMENTATION, impl.getDOMImplementation());
-		hints.put(ImageTranscoder.KEY_DOCUMENT_ELEMENT_NAMESPACE_URI,
-			SVGConstants.SVG_NAMESPACE_URI);
-		hints.put(ImageTranscoder.KEY_DOCUMENT_ELEMENT, SVGConstants.SVG_SVG_TAG);
-		hints.put(ImageTranscoder.KEY_XML_PARSER_VALIDATING, false);
-		transcoder.setTranscodingHints(hints);
-		transcoder.transcode(input, null);
-		BufferedImage bufferedImage = transcoder.getImage();
-		return description == null
-			? new ImageIcon(bufferedImage)
-			: new ImageIcon(bufferedImage, description);
-	}
-
 
 	/**
 	 * Factory method for create a new {@link ImageIcon} from the given relative image path as

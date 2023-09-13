@@ -1,6 +1,25 @@
 ## Change log
 ----------------------
 
+Version 3.1
+-------------
+
+ADDED:
+
+- new class file module-info.java that modularize this library
+
+CHANGED:
+
+- update gradle to new version 8.3
+- update of gradle plugin dependency io.freefair.gradle:lombok-plugin to new version 8.3
+- update of gradle plugin dependency com.github.ben-manes.versions.gradle.plugin to new version 0.48.0
+- update of gradle plugin dependency com.diffplug.spotless:spotless-plugin-gradle to new version 6.21.0
+- removed all dependencies from 'org.apache.xmlgraphics:batik-*' because of not providing modularization
+- removed dependency from 'org.imgscalr:imgscalr-lib' because of not providing modularization
+- moved class SvgImageTranscoder to legacy library swing-components
+- removed all resize-related methods from class ImageExtensions to new class ResizeImageExtensions in legacy library swing-components
+- removed all batik-related methods from class ImageIconFactory to new class BatikImageIconFactory in legacy library swing-components
+
 Version 3
 -------------
 

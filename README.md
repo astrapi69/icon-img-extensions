@@ -37,13 +37,13 @@ your project `build.gradle` if you want to import the core functionality of icon
 
 define version in file gradle.properties
 ```
-iconImgExtensionsVersion=3
+iconImgExtensionsVersion=3.1
 ```
 
 or in build.gradle ext area
 
 ```
-    iconImgExtensionsVersion = "3"
+    iconImgExtensionsVersion = "3.1"
 ```
 
 then add the dependency to the 'dependencies' area
@@ -55,17 +55,17 @@ then add the dependency to the 'dependencies' area
 ## Maven dependency
 
 Maven dependency is now on sonatype.
-Check out [sonatype repository](https://oss.sonatype.org/index.html#nexus-search;gav~io.github.astrapi69~icon-img-extensions~~~) for latest snapshots and releases.
+Check out [sonatype repository](https://oss.sonatype.org/index.html#nexus-search;gav~io.github.astrapi69~icon-img-extensions~~~) for the latest snapshots and releases.
 
 Add the following maven dependency to your project `pom.xml` if you want to import the core
 functionality of icon-img-extensions:
 
-Than you can add the dependency to your dependencies:
+Then you can add the dependency to your dependencies:
 
     <properties>
             ...
         <!-- icon-img-extensions version -->
-        <icon-img-extensions.version>3</icon-img-extensions.version>
+        <icon-img-extensions.version>3.1</icon-img-extensions.version>
             ...
     </properties>
             ...
