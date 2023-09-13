@@ -29,13 +29,18 @@ import java.awt.GraphicsConfiguration;
 import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
 import java.awt.Image;
+import java.awt.Window;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 
+import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
 import io.github.astrapi69.img.ImageExtensions;
+import io.github.astrapi69.lang.ClassExtensions;
 
 /**
  * The class {@link IconExtensions} provides extension methods for operations with {@link Icon}
@@ -114,6 +119,25 @@ public class IconExtensions
 		icon.paintIcon(null, graphics2D, 0, 0);
 		graphics2D.dispose();
 		return bufferedImage;
+	}
+
+	/**
+	 * Sets the icon image from the given resource name and add it to the given window object.
+	 *
+	 * @param resourceName
+	 *            The name from the resource. This includes the absolute path to the image icon from
+	 *            the classpath.
+	 * @param window
+	 *            the window in which to set the icon image.
+	 * @throws IOException
+	 *             Signals that an I/O exception has occurred.
+	 */
+	public static void setIconImage(final String resourceName, final Window window)
+		throws IOException
+	{
+		final InputStream isLogo = ClassExtensions.getResourceAsStream(resourceName);
+		final BufferedImage biLogo = ImageIO.read(isLogo);
+		window.setIconImage(biLogo);
 	}
 
 }

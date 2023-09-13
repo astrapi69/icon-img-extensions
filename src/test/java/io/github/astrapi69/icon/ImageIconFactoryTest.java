@@ -29,19 +29,16 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
-import org.apache.batik.transcoder.TranscoderException;
 import org.junit.jupiter.api.Test;
 import org.meanbean.test.BeanTester;
 
 import io.github.astrapi69.file.search.PathFinder;
-import io.github.astrapi69.lang.ClassExtensions;
 
 /**
  * The unit test class for the class {@link ImageIconFactory}
@@ -221,79 +218,6 @@ class ImageIconFactoryTest
 
 
 		actual = ImageIconFactory.newImageIcon(stars.toURI().toURL(), description);
-		assertNotNull(actual);
-	}
-
-	/**
-	 * Test for method {{@link ImageIconFactory#newImageIconFromSVG(String, float, float, String)}
-	 *
-	 * @throws TranscoderException
-	 *             is thrown when a transcoder is not able to transcode its input
-	 */
-	@Test
-	public void testNnewImageIconFromSVG() throws TranscoderException
-	{
-		ImageIcon actual;
-		String relativeImagePath;
-		float targetWidth;
-		float targetHeight;
-		String description;
-
-		relativeImagePath = "img/xmas/greendices.svg";
-		targetWidth = 10f;
-		targetHeight = 10f;
-		description = "A description";
-		actual = ImageIconFactory.newImageIconFromSVG(relativeImagePath, targetWidth, targetHeight,
-			description);
-		assertNotNull(actual);
-	}
-
-	/**
-	 * Test for method
-	 * {{@link ImageIconFactory#newImageIconFromSVG(InputStream, float, float, String)}
-	 *
-	 * @throws TranscoderException
-	 *             is thrown when a transcoder is not able to transcode its input
-	 */
-	@Test
-	public void testNnewImageIconFromSVGWithInputStream() throws TranscoderException
-	{
-		ImageIcon actual;
-		String relativeImagePath;
-		float targetWidth;
-		float targetHeight;
-		String description;
-		InputStream svgImageAsStream;
-
-		relativeImagePath = "img/xmas/greendices.svg";
-
-		svgImageAsStream = ClassExtensions.getResourceAsStream(relativeImagePath);
-		targetWidth = 10f;
-		targetHeight = 10f;
-		description = "A description";
-		actual = ImageIconFactory.newImageIconFromSVG(svgImageAsStream, targetWidth, targetHeight,
-			description);
-		assertNotNull(actual);
-	}
-
-	/**
-	 * Test for method {{@link ImageIconFactory#newImageIconFromSVG(String, float, float)}
-	 *
-	 * @throws TranscoderException
-	 *             is thrown when a transcoder is not able to transcode its input
-	 */
-	@Test
-	public void testNewImageIconFromSVGWithRelativePathWidthAndHeight() throws TranscoderException
-	{
-		ImageIcon actual;
-		String relativeImagePath;
-		float targetWidth;
-		float targetHeight;
-
-		relativeImagePath = "img/xmas/greendices.svg";
-		targetWidth = 10f;
-		targetHeight = 10f;
-		actual = ImageIconFactory.newImageIconFromSVG(relativeImagePath, targetWidth, targetHeight);
 		assertNotNull(actual);
 	}
 

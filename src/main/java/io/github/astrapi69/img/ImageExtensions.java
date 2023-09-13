@@ -42,10 +42,6 @@ import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
-import org.imgscalr.Scalr;
-import org.imgscalr.Scalr.Method;
-import org.imgscalr.Scalr.Mode;
-
 import lombok.extern.java.Log;
 
 /**
@@ -169,64 +165,6 @@ public class ImageExtensions
 	}
 
 	/**
-	 * Resize the given BufferedImage and returns the resized BufferedImage.
-	 *
-	 * @param originalImage
-	 *            the original image
-	 * @param scalingMethod
-	 *            the scaling method
-	 * @param resizeMode
-	 *            the resize mode
-	 * @param formatName
-	 *            the format name examples 'png' or 'jpg' description: Standard BMP Image Writer
-	 *            format names: [bmp, BMP] description: Standard JPEG Image Writer format names:
-	 *            [JPEG, jpeg, JPG, jpg] description: Standard WBMP Image Writer format names:
-	 *            [wbmp, WBMP] description: Standard PNG image writer format names: [png, PNG]
-	 *            description: Standard GIF image writer format names: [gif, GIF] description:
-	 *            Standard TIFF image writer format names: [tif, TIF, tiff, TIFF]
-	 * @param targetWidth
-	 *            the target width
-	 * @param targetHeight
-	 *            the target height
-	 * @return the resized
-	 * @throws IOException
-	 *             Signals that an I/O exception has occurred.
-	 */
-	public static BufferedImage getResized(final BufferedImage originalImage,
-		final Method scalingMethod, final Mode resizeMode, final String formatName,
-		final int targetWidth, final int targetHeight) throws IOException
-	{
-		return read(resize(originalImage, scalingMethod, resizeMode, formatName, targetWidth,
-			targetHeight));
-	}
-
-	/**
-	 * Resize the given BufferedImage and returns the resized BufferedImage.
-	 *
-	 * @param originalImage
-	 *            the original image
-	 * @param formatName
-	 *            the format name examples 'png' or 'jpg' description: Standard BMP Image Writer
-	 *            format names: [bmp, BMP] description: Standard JPEG Image Writer format names:
-	 *            [JPEG, jpeg, JPG, jpg] description: Standard WBMP Image Writer format names:
-	 *            [wbmp, WBMP] description: Standard PNG image writer format names: [png, PNG]
-	 *            description: Standard GIF image writer format names: [gif, GIF] description:
-	 *            Standard TIFF image writer format names: [tif, TIF, tiff, TIFF]
-	 * @param targetWidth
-	 *            the target width
-	 * @param targetHeight
-	 *            the target height
-	 * @return the resized
-	 * @throws IOException
-	 *             Signals that an I/O exception has occurred.
-	 */
-	public static BufferedImage getResized(final BufferedImage originalImage,
-		final String formatName, final int targetWidth, final int targetHeight) throws IOException
-	{
-		return read(resize(originalImage, formatName, targetWidth, targetHeight));
-	}
-
-	/**
 	 * Gets the buffered image from the given byte array.
 	 *
 	 * @param byteArray
@@ -280,69 +218,6 @@ public class ImageExtensions
 			log.log(Level.SEVERE, "Reading image failed.", e);
 		}
 		return img;
-	}
-
-	/**
-	 * Resize the given image.
-	 *
-	 * @param originalImage
-	 *            the original image
-	 * @param scalingMethod
-	 *            the scaling method
-	 * @param resizeMode
-	 *            the resize mode
-	 * @param formatName
-	 *            the format name examples 'png' or 'jpg' description: Standard BMP Image Writer
-	 *            format names: [bmp, BMP] description: Standard JPEG Image Writer format names:
-	 *            [JPEG, jpeg, JPG, jpg] description: Standard WBMP Image Writer format names:
-	 *            [wbmp, WBMP] description: Standard PNG image writer format names: [png, PNG]
-	 *            description: Standard GIF image writer format names: [gif, GIF] description:
-	 *            Standard TIFF image writer format names: [tif, TIF, tiff, TIFF]
-	 * @param targetWidth
-	 *            the target width
-	 * @param targetHeight
-	 *            the target height
-	 * @return the byte[]
-	 */
-	public static byte[] resize(final BufferedImage originalImage, final Method scalingMethod,
-		final Mode resizeMode, final String formatName, final int targetWidth,
-		final int targetHeight)
-	{
-		try
-		{
-			final BufferedImage resizedImage = Scalr.resize(originalImage, scalingMethod,
-				resizeMode, targetWidth, targetHeight);
-			return toByteArray(resizedImage, formatName);
-		}
-		catch (final Exception e)
-		{
-			return null;
-		}
-	}
-
-	/**
-	 * Resize the given BufferedImage.
-	 *
-	 * @param originalImage
-	 *            the original image
-	 * @param formatName
-	 *            the format name examples 'png' or 'jpg' description: Standard BMP Image Writer
-	 *            format names: [bmp, BMP] description: Standard JPEG Image Writer format names:
-	 *            [JPEG, jpeg, JPG, jpg] description: Standard WBMP Image Writer format names:
-	 *            [wbmp, WBMP] description: Standard PNG image writer format names: [png, PNG]
-	 *            description: Standard GIF image writer format names: [gif, GIF] description:
-	 *            Standard TIFF image writer format names: [tif, TIF, tiff, TIFF]
-	 * @param targetWidth
-	 *            the target width
-	 * @param targetHeight
-	 *            the target height
-	 * @return the byte[]
-	 */
-	public static byte[] resize(final BufferedImage originalImage, final String formatName,
-		final int targetWidth, final int targetHeight)
-	{
-		return resize(originalImage, Scalr.Method.QUALITY, Scalr.Mode.FIT_EXACT, formatName,
-			targetWidth, targetHeight);
 	}
 
 	/**
@@ -412,8 +287,8 @@ public class ImageExtensions
 	/**
 	 * Weave the given secret message into the given {@link BufferedImage}. Preconditions for the
 	 * secret message the length must not be greater the 255 and the given image should be not too
-	 * small size, that means 'message.length() * 11 &gt; width * height'
-	 *
+	 * small size, that means 'message.length() * 11 &gt; width * height' <br>
+	 * <br>
 	 * To unweave the secret message use the corresponding
 	 * {@link ImageExtensions#unweaveFrom(BufferedImage)}
 	 *

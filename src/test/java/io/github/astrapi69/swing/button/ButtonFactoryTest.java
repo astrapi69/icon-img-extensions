@@ -24,16 +24,13 @@
  */
 package io.github.astrapi69.swing.button;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import javax.swing.Icon;
 import javax.swing.JButton;
-import javax.swing.UIManager;
 
 import org.junit.jupiter.api.Test;
 import org.meanbean.test.BeanTester;
 
-import io.github.astrapi69.img.ImageExtensions;
 import io.github.astrapi69.swing.button.builder.JButtonInfo;
 
 /**
