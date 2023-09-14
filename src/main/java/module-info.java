@@ -25,4 +25,10 @@ module icon.img.extensions
 	requires java.logging;
 	requires jobj.core.main;
 	requires throwable;
+
+	exports io.github.astrapi69.icon;
+	exports io.github.astrapi69.icon.model;
+	exports io.github.astrapi69.img;
+	exports io.github.astrapi69.swing.button;
+	exports io.github.astrapi69.swing.button.builder;
 }
