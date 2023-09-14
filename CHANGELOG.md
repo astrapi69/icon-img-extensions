@@ -1,6 +1,17 @@
 ## Change log
 ----------------------
 
+Version 3.2
+-------------
+
+ADDED:
+
+- exports to the class file module-info.java for the corresponding package that have to be exported
+
+CHANGED:
+
+- update gradle to new version 8.3
+
 Version 3.1
 -------------
 
@@ -10,7 +21,6 @@ ADDED:
 
 CHANGED:
 
-- update gradle to new version 8.3
 - update of gradle plugin dependency io.freefair.gradle:lombok-plugin to new version 8.3
 - update of gradle plugin dependency com.github.ben-manes.versions.gradle.plugin to new version 0.48.0
 - update of gradle plugin dependency com.diffplug.spotless:spotless-plugin-gradle to new version 6.21.0
