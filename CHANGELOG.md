@@ -1,6 +1,27 @@
 ## Change log
 ----------------------
 
+Version 3.3
+-------------
+
+ADDED:
+
+- new extension class for the class Color
+- new model class HsbModel for the representation of the HSB
+- new model class RgbModel for the representation of the RGB
+
+CHANGED:
+
+- update gradle to new version 8.6
+- update of dependency lombok to new version 1.18.30
+- update of gradle plugin dependency io.freefair.gradle:lombok-plugin to new version 8.6
+- update of gradle plugin dependency com.github.ben-manes.versions.gradle.plugin to new version 0.51.0
+- update of gradle plugin dependency org.ajoberstar.grgit:grgit-gradle to new version 5.2.2
+- update of gradle plugin dependency com.diffplug.spotless:spotless-plugin-gradle to new version 6.25.0
+- update of dependency jobj-core to new version 8.2
+- update of test dependency junit-jupiter-api to new version 5.10.2
+- replaced of test dependency junit-jupiter-engine with new test dependency junit-platform-launcher to new version 1.10.2
+
 Version 3.2
 -------------
 
