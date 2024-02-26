@@ -27,7 +27,7 @@ package io.github.astrapi69.color;
 import java.awt.Color;
 
 import io.github.astrapi69.color.model.HsbModel;
-import io.github.astrapi69.color.model.RgbModel;
+import io.github.astrapi69.color.model.RgbIntegerModel;
 import lombok.NonNull;
 
 /**
@@ -38,16 +38,16 @@ public class ColorExtensions
 {
 
 	/**
-	 * Converts the given {@link Color} object to a {@link RgbModel} object
+	 * Converts the given {@link Color} object to a {@link RgbIntegerModel} object
 	 *
 	 * @param color
 	 *            the color
-	 * @return the new {@link RgbModel} object
+	 * @return the new {@link RgbIntegerModel} object
 	 */
-	public static RgbModel toRgbModel(@NonNull final Color color)
+	public static RgbIntegerModel toRgbModel(@NonNull final Color color)
 	{
-		return RgbModel.builder().red(color.getRed()).green(color.getGreen()).blue(color.getBlue())
-			.build();
+		return RgbIntegerModel.builder().red(color.getRed()).green(color.getGreen())
+			.blue(color.getBlue()).build();
 	}
 
 	/**
@@ -76,40 +76,40 @@ public class ColorExtensions
 	}
 
 	/**
-	 * Converts the given {@link RgbModel} object to a {@link Color} object
+	 * Converts the given {@link RgbIntegerModel} object to a {@link Color} object
 	 *
 	 * @param rgbModel
 	 *            the HSB model the contains the values
 	 * @return the new {@link Color} object
 	 */
-	public static Color toColor(@NonNull final RgbModel rgbModel)
+	public static Color toColor(@NonNull final RgbIntegerModel rgbModel)
 	{
 		return new Color(rgbModel.getRed(), rgbModel.getGreen(), rgbModel.getBlue());
 	}
 
 	/**
-	 * Converts the given {@link HsbModel} object to a {@link RgbModel} object
+	 * Converts the given {@link HsbModel} object to a {@link RgbIntegerModel} object
 	 *
 	 * @param hsbModel
 	 *            the HSB model the contains the values
-	 * @return the new {@link RgbModel} object
+	 * @return the new {@link RgbIntegerModel} object
 	 */
-	public static RgbModel toRGB(@NonNull final HsbModel hsbModel)
+	public static RgbIntegerModel toRGB(@NonNull final HsbModel hsbModel)
 	{
 		int rgb = Color.HSBtoRGB(hsbModel.getHue(), hsbModel.getSaturation(),
 			hsbModel.getBrightness());
-		return RgbModel.builder().red((rgb >> 16) & 0xFF).green((rgb >> 8) & 0xFF).blue(rgb & 0xFF)
-			.build();
+		return RgbIntegerModel.builder().red((rgb >> 16) & 0xFF).green((rgb >> 8) & 0xFF)
+			.blue(rgb & 0xFF).build();
 	}
 
 	/**
-	 * Converts the given {@link RgbModel} object to a {@link HsbModel} object
+	 * Converts the given {@link RgbIntegerModel} object to a {@link HsbModel} object
 	 *
 	 * @param rgbModel
 	 *            the HSB model the contains the values
 	 * @return the new {@link HsbModel} object
 	 */
-	public static HsbModel toHSB(@NonNull final RgbModel rgbModel)
+	public static HsbModel toHSB(@NonNull final RgbIntegerModel rgbModel)
 	{
 
 		float[] hsb = Color.RGBtoHSB(rgbModel.getRed(), rgbModel.getGreen(), rgbModel.getBlue(),

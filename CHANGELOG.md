@@ -4,7 +4,14 @@
 Version 3.4-SNAPSHOT
 -------------
 
+ADDED:
 
+- new generic model class GenericRgbModel with a generic type that extends Number
+- new model class RgbFloatModel for the representation of the RGB with float numbers
+
+CHANGED:
+
+- rename of RgbModel to RgbIntegerModel
 
 Version 3.3
 -------------

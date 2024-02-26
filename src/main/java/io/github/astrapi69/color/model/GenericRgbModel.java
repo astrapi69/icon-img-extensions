@@ -26,17 +26,17 @@ package io.github.astrapi69.color.model;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.FieldDefaults;
+import lombok.experimental.SuperBuilder;
 
 /**
- * The class {@link RgbModel} is the data model for the representation of the RGB. RGB stands for
- * Red, Green, and Blue, and it's a color model used in various devices and applications
+ * The class {@link GenericRgbModel} is the data model for the representation of the RGB. RGB stands
+ * for Red, Green, and Blue, and it's a color model used in various devices and applications
  */
 @Getter
 @Setter
@@ -44,16 +44,19 @@ import lombok.experimental.FieldDefaults;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder(toBuilder = true)
+@SuperBuilder(toBuilder = true)
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class RgbModel
+public class GenericRgbModel<T extends Number>
 {
-	/** the int value for the red color */
-	int red;
+	/** the int value for the red component */
+	T red;
 
-	/** the int value for the green color */
-	int green;
+	/** the int value for the green component */
+	T green;
 
-	/** the int value for the blue color */
-	int blue;
+	/** the int value for the blue component */
+	T blue;
+
+	/** the int value for the blue component */
+	T alpha;
 }
