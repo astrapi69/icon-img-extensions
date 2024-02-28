@@ -44,7 +44,7 @@ import lombok.experimental.SuperBuilder;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@SuperBuilder(toBuilder = true)
+@SuperBuilder
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class GenericRgbModel<T extends Number>
 {

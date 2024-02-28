@@ -40,11 +40,9 @@ import lombok.experimental.SuperBuilder;
  */
 @Getter
 @Setter
-@EqualsAndHashCode
 @ToString
 @NoArgsConstructor
-@AllArgsConstructor
-@SuperBuilder(toBuilder = true)
+@SuperBuilder
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class RgbIntegerModel extends GenericRgbModel<Integer>
 {
