@@ -1,9 +1,9 @@
 package io.github.astrapi69.color;
 
-import io.github.astrapi69.color.model.HsbModel;
-
 import java.awt.Color;
 import java.util.regex.Pattern;
+
+import io.github.astrapi69.color.model.HsbModel;
 
 public class CssColorToJavaColorExtensions
 {
@@ -12,6 +12,8 @@ public class CssColorToJavaColorExtensions
 	private static final Pattern rgbRegex = Pattern.compile("rgba?\\([^)]*\\)",
 		Pattern.CASE_INSENSITIVE);
 	private static final Pattern hlsRegex = Pattern.compile("hlsa?\\([^)]*\\)",
+		Pattern.CASE_INSENSITIVE);
+	private static final Pattern hlsaRegex = Pattern.compile("hlsa?\\([^)]*\\)",
 		Pattern.CASE_INSENSITIVE);
 
 
@@ -25,7 +27,9 @@ public class CssColorToJavaColorExtensions
 			return toColorFromRgb(cssString);
 		if (hlsRegex.matcher(cssString).matches())
 			return getRgbFromHsl(cssString);
-		return null; // no match
+		else
+			throw new IllegalArgumentException(
+				"Given css string '" + cssString + "' not supported");
 	}
 
 	private static Color getRgbFromHsl(String hslString)
@@ -44,7 +48,8 @@ public class CssColorToJavaColorExtensions
 		double s = parsePercent(sat);
 		double l = parsePercent(light);
 		int a = parseAlpha(alpha);
-		HsbModel hsbModel = HsbModel.builder().hue(h).saturation(Float.valueOf(s+"")).brightness(Float.valueOf(l+"")).build();
+		HsbModel hsbModel = HsbModel.builder().hue(h).saturation(Float.valueOf(s + ""))
+			.brightness(Float.valueOf(l + "")).build();
 		Color color = ColorExtensions.toColor(hsbModel);
 		return new Color(color.getRed(), color.getGreen(), color.getBlue(), a);
 	}
@@ -58,11 +63,12 @@ public class CssColorToJavaColorExtensions
 	private static Color toColorFromHexWithAlpha(String hexString)
 	{
 		String alphaAsString = hexString.substring(hexString.length() - 2);
-		int alpha = Integer.parseInt(alphaAsString);
 		String hexColor = hexString.substring(0, hexString.length() - 2);
-		Color color = new Color(Integer.decode(hexColor));
-		int alpha1 = parseAlpha(alphaAsString);
-		return new Color(color.getRed(), color.getGreen(), color.getBlue(), alpha1);
+		Color colorFromHex = toColorFromHex(hexColor);
+		int alpha = parseAlpha(alphaAsString);
+		Color color = new Color(colorFromHex.getRed(), colorFromHex.getGreen(),
+			colorFromHex.getBlue(), alpha);
+		return color;
 	}
 
 	private static Color toColorFromRgb(String rgbString)
@@ -76,8 +82,9 @@ public class CssColorToJavaColorExtensions
 		{
 			alpha = values[4];
 		}
-		int alphaAsInt = Integer.parseInt(alpha);
-		return new Color(parseValue(red, 255), parseValue(green, 255), parseValue(blue, 255), alphaAsInt);
+		int alphaAsInt = (int)(Double.parseDouble(alpha) * 255);
+		return new Color(parseValue(red, 255), parseValue(green, 255), parseValue(blue, 255),
+			alphaAsInt);
 	}
 
 	private static int parseValue(String val, int max)
@@ -94,8 +101,10 @@ public class CssColorToJavaColorExtensions
 		return Integer.parseInt(perc.substring(0, perc.length() - 1)) / 100.0;
 	}
 
-	private static int parseAlpha(String alpha)
+	public static int parseAlpha(String alphaAsString)
 	{
-		return (int)(Double.parseDouble(alpha) * 255);
+		long color = Long.parseLong(alphaAsString, 16);
+		return (int)color;
 	}
+
 }
