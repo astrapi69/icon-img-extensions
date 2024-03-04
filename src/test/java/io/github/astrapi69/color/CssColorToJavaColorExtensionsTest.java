@@ -12,6 +12,31 @@ class CssColorToJavaColorExtensionsTest
 {
 
 	/**
+	 * Test method for {@link CssColorToJavaColorExtensions#toHexString(Color, boolean)}
+	 */
+	@Test
+	void toHexString() {
+		int red;
+		int green;
+		int blue;
+		int alpha;
+		String hexString;
+		String cssString;
+		Color actual;
+		Color expected;
+
+		red = 255;
+		blue = 204;
+		green = 0;
+		cssString = "#ff00cc";
+
+		actual = CssColorToJavaColorExtensions.toColor(cssString);
+		assertNotNull(actual);
+		hexString = CssColorToJavaColorExtensions.toHexString(actual, false);
+		assertEquals(cssString, hexString);
+	}
+
+	/**
 	 * Test method for {@link CssColorToJavaColorExtensions#toColor(String)}
 	 */
 	@Test
@@ -109,5 +134,13 @@ class CssColorToJavaColorExtensionsTest
 		assertNotNull(actual);
 		assertEquals(expected, actual);
 
+	}
+
+	Color toColor(int i) {
+		final int a = (i >> 24) & 0xFF;
+		final int r = (i >> 16) & 0xFF;
+		final int g = (i >> 8) & 0xFF;
+		final int b = i & 0xFF;
+		return new Color(r, g, b, a);
 	}
 }
