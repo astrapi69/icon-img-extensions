@@ -54,9 +54,12 @@ public class CssColorToJavaColorExtensions
 		return new Color(color.getRed(), color.getGreen(), color.getBlue(), a);
 	}
 
-	public static String toHexString(Color color, boolean withAlpha) {
-		if (withAlpha){
-			return String.format("#%02x%02x%02x%02x", color.getRed(), color.getGreen(), color.getBlue(), color.getAlpha());
+	public static String toHexString(Color color, boolean withAlpha)
+	{
+		if (withAlpha)
+		{
+			return String.format("#%02x%02x%02x%02x", color.getRed(), color.getGreen(),
+				color.getBlue(), color.getAlpha());
 		}
 		return String.format("#%02x%02x%02x", color.getRed(), color.getGreen(), color.getBlue());
 	}
