@@ -20,7 +20,6 @@ class CssColorToJavaColorExtensionsTest
 		int red;
 		int green;
 		int blue;
-		int alpha;
 		String hexString;
 		String cssString;
 		Color actual;
@@ -33,27 +32,13 @@ class CssColorToJavaColorExtensionsTest
 
 		actual = CssColorToJavaColorExtensions.toColor(cssString);
 		assertNotNull(actual);
+		expected = new Color(red, green, blue);
+		assertEquals(expected, actual);
 		hexString = CssColorToJavaColorExtensions.toHexString(actual, false);
 		assertEquals(cssString, hexString);
-
-		Color your_color = new Color(128, 128, 128);
-
-		String buf = Integer.toHexString(your_color.getRGB());
-		String hex = "#" + buf.substring(buf.length() - 6);
-		int alpha1 = your_color.getAlpha();
-		assertEquals(255, alpha1);
-		Color newColor = CssColorToJavaColorExtensions.toColor(hex);
-		String hexString1 = CssColorToJavaColorExtensions.toHexString(newColor, false);
-		assertEquals(hex, hexString1);
-
-		your_color = new Color(128, 128, 128, 32);
-		buf = Integer.toHexString(your_color.getRGB());
-		hex = "#" + buf;
-		alpha1 = your_color.getAlpha();
-		assertEquals(32, alpha1);
-		newColor = CssColorToJavaColorExtensions.toColor(hex);
-		hexString1 = CssColorToJavaColorExtensions.toHexString(newColor, true);
-		assertEquals(hex, hexString1);
+		hexString = CssColorToJavaColorExtensions.toHexString(actual, false, true);
+		cssString = "#FF00CC";
+		assertEquals(cssString, hexString);
 	}
 
 
@@ -69,6 +54,7 @@ class CssColorToJavaColorExtensionsTest
 		int alpha;
 		int actualAlpha;
 		int expectedAlpha;
+		String hexStringFromInt;
 		String hexString;
 		String cssString;
 		Color actual;
@@ -80,8 +66,8 @@ class CssColorToJavaColorExtensionsTest
 
 		input = new Color(red, green, blue);
 
-		String buf = Integer.toHexString(input.getRGB());
-		hexString = "#" + buf.substring(buf.length() - 6);
+		hexStringFromInt = Integer.toHexString(input.getRGB());
+		hexString = "#" + hexStringFromInt.substring(hexStringFromInt.length() - 6);
 		actualAlpha = input.getAlpha();
 		expectedAlpha = 255;
 		assertEquals(expectedAlpha, actualAlpha);
@@ -92,8 +78,8 @@ class CssColorToJavaColorExtensionsTest
 		alpha = 32;
 		input = new Color(red, green, blue, alpha);
 
-		buf = Integer.toHexString(input.getRGB());
-		hexString = "#" + buf;
+		hexStringFromInt = Integer.toHexString(input.getRGB());
+		hexString = "#" + hexStringFromInt;
 		actualAlpha = input.getAlpha();
 		expectedAlpha = 32;
 		assertEquals(expectedAlpha, actualAlpha);
