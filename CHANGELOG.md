@@ -8,6 +8,7 @@ ADDED:
 
 - new generic model class GenericRgbModel with a generic type that extends Number
 - new model class RgbFloatModel for the representation of the RGB with float numbers
+- new test dependency silly-collection in major version 27
 
 CHANGED:
 
