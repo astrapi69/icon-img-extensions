@@ -54,6 +54,24 @@ then add the dependency to the 'dependencies' area
     implementation("io.github.astrapi69:icon-img-extensions:$iconImgExtensionsVersion")
 ```
 
+# with new libs.versions.toml file
+
+If you use the new libs.versions.toml file for new automatic catalog versions update
+
+```
+[versions]
+icon-img-extensions-version=${latestVersion}
+
+[libraries]
+icon-img-extensions = { module = "io.github.astrapi69:icon-img-extensions", version.ref = "icon-img-extensions-version" }
+```
+then add the dependency to the dependencies area
+
+```
+    implementation libs.icon.img.extensions
+```
+
+
 ## Maven dependency
 
 Maven dependency is now on sonatype.
