@@ -26,6 +26,8 @@ module icon.img.extensions
 	requires jobj.core.main;
 	requires throwable;
 
+	exports io.github.astrapi69.color;
+	exports io.github.astrapi69.color.model;
 	exports io.github.astrapi69.icon;
 	exports io.github.astrapi69.icon.model;
 	exports io.github.astrapi69.img;

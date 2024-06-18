@@ -33,7 +33,7 @@ import org.junit.jupiter.api.Test;
 import org.meanbean.test.BeanTester;
 
 import io.github.astrapi69.color.model.HsbModel;
-import io.github.astrapi69.color.model.RgbModel;
+import io.github.astrapi69.color.model.RgbIntegerModel;
 
 
 /**
@@ -75,7 +75,7 @@ class ColorExtensionsTest
 	}
 
 	/**
-	 * Test method for {@link ColorExtensions#toColor(RgbModel)}
+	 * Test method for {@link ColorExtensions#toColor(RgbIntegerModel)}
 	 */
 	@Test
 	void toColorWithRgbModel()
@@ -83,7 +83,7 @@ class ColorExtensionsTest
 		int red;
 		int green;
 		int blue;
-		RgbModel rgbModel;
+		RgbIntegerModel rgbModel;
 		Color actual;
 		Color expected;
 
@@ -91,7 +91,7 @@ class ColorExtensionsTest
 		blue = 153;
 		green = 102;
 
-		rgbModel = RgbModel.builder().red(red).blue(blue).green(green).build();
+		rgbModel = RgbIntegerModel.builder().red(red).blue(blue).green(green).build();
 
 		actual = ColorExtensions.toColor(rgbModel);
 		assertNotNull(actual);
@@ -112,8 +112,8 @@ class ColorExtensionsTest
 		float saturation;
 		float brightness;
 		HsbModel hsbModel;
-		RgbModel actual;
-		RgbModel expected;
+		RgbIntegerModel actual;
+		RgbIntegerModel expected;
 
 		red = 51;
 		blue = 153;
@@ -128,12 +128,12 @@ class ColorExtensionsTest
 		actual = ColorExtensions.toRGB(hsbModel);
 		assertNotNull(actual);
 
-		expected = RgbModel.builder().red(red).blue(blue).green(green).build();
+		expected = RgbIntegerModel.builder().red(red).blue(blue).green(green).build();
 		assertEquals(expected, actual);
 	}
 
 	/**
-	 * Test method for {@link ColorExtensions#toHSB(RgbModel)}
+	 * Test method for {@link ColorExtensions#toHSB(RgbIntegerModel)}
 	 */
 	@Test
 	void toHSB()
@@ -144,7 +144,7 @@ class ColorExtensionsTest
 		float hue;
 		float saturation;
 		float brightness;
-		RgbModel rgbModel;
+		RgbIntegerModel rgbModel;
 		HsbModel actual;
 		HsbModel expected;
 
@@ -155,7 +155,7 @@ class ColorExtensionsTest
 		saturation = 0.6666667f;
 		brightness = 0.6f;
 
-		rgbModel = RgbModel.builder().red(red).blue(blue).green(green).build();
+		rgbModel = RgbIntegerModel.builder().red(red).blue(blue).green(green).build();
 
 		actual = ColorExtensions.toHSB(rgbModel);
 		assertNotNull(actual);
@@ -174,8 +174,8 @@ class ColorExtensionsTest
 		int green;
 		int blue;
 		Color inputArgument;
-		RgbModel actual;
-		RgbModel expected;
+		RgbIntegerModel actual;
+		RgbIntegerModel expected;
 
 		red = 51;
 		blue = 153;
@@ -186,7 +186,7 @@ class ColorExtensionsTest
 		actual = ColorExtensions.toRgbModel(inputArgument);
 		assertNotNull(actual);
 
-		expected = RgbModel.builder().red(red).blue(blue).green(green).build();
+		expected = RgbIntegerModel.builder().red(red).blue(blue).green(green).build();
 		assertEquals(expected, actual);
 	}
 

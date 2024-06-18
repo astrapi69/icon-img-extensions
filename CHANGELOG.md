@@ -1,6 +1,25 @@
 ## Change log
 ----------------------
 
+Version 4
+-------------
+
+ADDED:
+
+- new generic model class GenericRgbModel with a generic type that extends Number
+- new model class RgbFloatModel for the representation of the RGB with float numbers
+- new test dependency silly-collection in major version 27.1
+- new libs.versions.toml file for new automatic catalog versions update
+
+CHANGED:
+
+- rename of RgbModel to RgbIntegerModel
+- update gradle to new version 8.8
+- update of dependency lombok to new version 1.18.32
+- update of gradle plugin dependency com.diffplug.spotless:spotless-plugin-gradle to new version 7.0.0.BETA1
+- update of test dependency junit-jupiter-api to new version 5.11.0-M2
+- update of test dependency junit-platform-launcher to new version 1.11.0-M2
+
 Version 3.3
 -------------
 
