@@ -4,6 +4,30 @@
 Version 4.1-SNAPSHOT
 -------------
 
+## [Unreleased]
+
+### Added
+- **ImageIconPreloader**: New utility class for preloading and caching tray icons.
+- **Gradle modularization**: Introduced `apply-gradle-files.gradle` and `gradle-files.list` to streamline configuration management.
+- **Parameterized tests**: Implemented CSV-based parameterized tests for `ImageIconPreloader`.
+- **New Gradle plugins**: Integrated `jacoco` for code coverage and updated plugin versions.
+
+### Changed
+- **Gradle version**: Upgraded Gradle wrapper to version `8.12-rc-2`.
+- **Java compatibility**: Updated source compatibility from Java 17 to Java 21.
+- **Dependency management**: Consolidated dependencies into bundles for improved clarity.
+- **Repositories script**: Enhanced with detailed comments and dynamic property handling for URLs.
+- **Licensing script**: Refactored for improved readability using `setHeader` and `setIgnoreFailures`.
+
+### Removed
+- **Unused annotations**: Removed `@AllArgsConstructor` and `@EqualsAndHashCode` from `RgbIntegerModel` and `RgbFloatModel`.
+
+### Fixed
+- **Spotless configuration**: Enhanced formatting tasks to include unused import removal.
+
+### Miscellaneous
+- Added IntelliJ run configurations for `spotlessApply` and `tagRelease`.
+
 Version 4
 -------------
 

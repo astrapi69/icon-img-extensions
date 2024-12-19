@@ -1,18 +1,18 @@
 [versions]
-file-worker-version = "17.2"
-gradle-plugin-grgit-version = "5.2.2"
+file-worker-version = "19.0"
+gradle-plugin-grgit-version = "5.3.0"
 gradle-plugin-license-version = "0.16.1"
-gradle-plugin-lombok-version = "8.6"
-gradle-plugin-spotless-version = "7.0.0.BETA1"
-gradle-plugin-version-catalog-update-version = "0.8.4"
+gradle-plugin-lombok-version = "8.11"
+gradle-plugin-spotless-version = "7.0.0.BETA4"
+gradle-plugin-version-catalog-update-version = "0.8.5"
 gradle-plugin-versions-version = "0.51.0"
-jobj-core-version = "8.2"
-junit-jupiter-version = "5.11.0-M2"
-junit-platform-launcher-version = "1.11.0-M2"
-lombok-version = "1.18.32"
+jobj-core-version = "9.1"
+junit-jupiter-version = "5.11.4"
+junit-platform-launcher-version = "1.11.4"
+lombok-version = "1.18.36"
 meanbean-version = "3.0.0-M9"
-silly-collection-version = "27.1"
-throwable-version = "2.3"
+silly-collection-version = "28.1"
+throwable-version = "3"
 
 [libraries]
 file-worker = { module = "io.github.astrapi69:file-worker", version.ref = "file-worker-version" }
@@ -25,9 +25,37 @@ silly-collection = { module = "io.github.astrapi69:silly-collection", version.re
 throwable = { module = "io.github.astrapi69:throwable", version.ref = "throwable-version" }
 
 [bundles]
+# Dependencies for the annotation processor used during the compilation process
+annotation-processor = [
+    "lombok",
+]
+# Dependencies required only at compile-time and not included in the final artifact
+compile-only = [
+    "lombok",
+]
+# The core dependencies
+core-dependencies = [
+    "jobj-core",
+    "throwable",
+]
+# Annotation processor dependencies used specifically for test classes
+test-annotation-processor = [
+    "lombok",
+]
+# Dependencies required only at test compile-time and not included in test runtime
+test-compile-only = [
+    "lombok",
+]
+# Dependencies required only at test runtime, such as test execution platforms
+test-runtime-only = [
+    "junit-platform-launcher",
+]
+# Dependencies required for unit testing
 unit-testing = [
+    "file-worker",
     "junit-jupiter",
     "meanbean",
+    "silly-collection",
 ]
 
 [plugins]

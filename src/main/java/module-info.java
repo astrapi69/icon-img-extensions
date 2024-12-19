@@ -20,11 +20,11 @@
  */
 module icon.img.extensions
 {
-	requires lombok;
+	requires static lombok;
 	requires java.desktop;
 	requires java.logging;
-	requires jobj.core.main;
-	requires throwable;
+	requires io.github.astrapisixtynine.jobj.core;
+	requires io.github.astrapisixtynine.throwable;
 
 	exports io.github.astrapi69.color;
 	exports io.github.astrapi69.color.model;
