@@ -1,10 +1,14 @@
 ## Change log
 ----------------------
 
-Version 4.1
+Version 4.2-SNAPSHOT
 -------------
 
 ## [Unreleased]
+
+Version 4.1
+-------------
+
 
 ### Added
 - **ImageIconPreloader**: New utility class for preloading and caching tray icons.
