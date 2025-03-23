@@ -167,6 +167,20 @@ public class ImageExtensions
 	/**
 	 * Gets the buffered image from the given byte array.
 	 *
+	 * @param file
+	 *            the file
+	 * @return the buffered image
+	 * @throws IOException
+	 *             Signals that an I/O exception has occurred.
+	 */
+	public static BufferedImage read(final File file) throws IOException
+	{
+		return ImageIO.read(file);
+	}
+
+	/**
+	 * Gets the buffered image from the given byte array.
+	 *
 	 * @param byteArray
 	 *            the byte array
 	 * @return the buffered image
