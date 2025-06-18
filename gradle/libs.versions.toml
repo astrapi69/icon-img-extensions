@@ -1,16 +1,17 @@
 [versions]
 file-worker-version = "19.0"
-gradle-plugin-grgit-version = "5.3.0"
+gradle-plugin-grgit-version = "5.3.2"
 gradle-plugin-license-version = "0.16.1"
-gradle-plugin-lombok-version = "8.13"
-gradle-plugin-spotless-version = "7.0.2"
-gradle-plugin-version-catalog-update-version = "0.8.5"
+gradle-plugin-lombok-version = "8.14"
+gradle-plugin-spotless-version = "7.0.4"
+gradle-plugin-version-catalog-update-version = "1.0.0"
 gradle-plugin-versions-version = "0.52.0"
 jobj-core-version = "9.1"
-junit-jupiter-version = "5.13.0-M1"
-junit-platform-launcher-version = "1.13.0-M1"
-lombok-version = "1.18.36"
+junit-jupiter-version = "5.13.1"
+junit-platform-launcher-version = "1.13.1"
+lombok-version = "1.18.38"
 meanbean-version = "3.0.0-M9"
+pngtastic-version = "1.8"
 silly-collection-version = "28.1"
 throwable-version = "3"
 
@@ -21,6 +22,7 @@ junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "jun
 junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher", version.ref = "junit-platform-launcher-version" }
 lombok = { module = "org.projectlombok:lombok", version.ref = "lombok-version" }
 meanbean = { module = "com.github.meanbeanlib:meanbean", version.ref = "meanbean-version" }
+pngtastic = { module = "com.github.depsypher:pngtastic", version.ref = "pngtastic-version" }
 silly-collection = { module = "io.github.astrapi69:silly-collection", version.ref = "silly-collection-version" }
 throwable = { module = "io.github.astrapi69:throwable", version.ref = "throwable-version" }
 
@@ -36,6 +38,7 @@ compile-only = [
 # The core dependencies
 core-dependencies = [
     "jobj-core",
+    "pngtastic",
     "throwable",
 ]
 # Annotation processor dependencies used specifically for test classes
