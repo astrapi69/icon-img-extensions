@@ -1,10 +1,10 @@
+
 test {
-    mustRunAfter(jar)
     useJUnitPlatform()
 }
 
-tasks.named("test") {
-    it.mustRunAfter(tasks.named("jar"))
+jacoco {
+    toolVersion = '0.8.15'
 }
 
 jacocoTestReport {

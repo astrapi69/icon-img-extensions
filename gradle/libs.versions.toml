@@ -1,11 +1,9 @@
 [versions]
 file-worker-version = "19.0"
-gradle-plugin-grgit-version = "5.3.2"
-gradle-plugin-license-version = "0.16.1"
-gradle-plugin-lombok-version = "8.14"
-gradle-plugin-spotless-version = "7.0.4"
-gradle-plugin-version-catalog-update-version = "1.0.0"
-gradle-plugin-versions-version = "0.52.0"
+gradle-plugin-lombok-version = "9.5.0"
+gradle-plugin-spotless-version = "8.10.0"
+gradle-plugin-version-catalog-update-version = "1.1.1"
+gradle-plugin-versions-version = "0.61.0"
 jobj-core-version = "9.1"
 junit-jupiter-version = "5.13.1"
 junit-platform-launcher-version = "1.13.1"
@@ -63,8 +61,6 @@ unit-testing = [
 
 [plugins]
 gradle-versions-plugin = { id = "com.github.ben-manes.versions", version.ref = "gradle-plugin-versions-version" }
-grgit-gradle = { id = "org.ajoberstar.grgit", version.ref = "gradle-plugin-grgit-version" }
-license-gradle-plugin = { id = "com.github.hierynomus.license", version.ref = "gradle-plugin-license-version" }
 lombok-plugin = { id = "io.freefair.lombok", version.ref = "gradle-plugin-lombok-version" }
 spotless-plugin-gradle = { id = "com.diffplug.spotless", version.ref = "gradle-plugin-spotless-version" }
-version-catalog-update = { id = "nl.littlerobots.version-catalog-update", version.ref = "gradle-plugin-version-catalog-update-version" }
+versionCatalogUpdate = { id = "nl.littlerobots.version-catalog-update", version.ref = "gradle-plugin-version-catalog-update-version" }
