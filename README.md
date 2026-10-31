@@ -5,7 +5,7 @@
 [![Java CI with Gradle](https://github.com/astrapi69/icon-img-extensions/actions/workflows/gradle.yml/badge.svg)](https://github.com/astrapi69/icon-img-extensions/actions/workflows/gradle.yml)
 [![Coverage Status](https://codecov.io/gh/astrapi69/icon-img-extensions/branch/develop/graph/badge.svg)](https://codecov.io/gh/astrapi69/icon-img-extensions)
 [![Open Issues](https://img.shields.io/github/issues/astrapi69/icon-img-extensions.svg?style=flat)](https://github.com/astrapi69/icon-img-extensions/issues)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/icon-img-extensions/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/icon-img-extensions)
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.astrapi69/icon-img-extensions)](https://central.sonatype.com/artifact/io.github.astrapi69/icon-img-extensions)
 [![Javadocs](http://www.javadoc.io/badge/io.github.astrapi69/icon-img-extensions.svg)](http://www.javadoc.io/doc/io.github.astrapi69/icon-img-extensions)
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](http://opensource.org/licenses/MIT)
 [![Donate](https://img.shields.io/badge/donate-❤-ff2244.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GVBTWLRAZ7HB8)
@@ -32,7 +32,7 @@ The source code comes under the liberal MIT License, making icon-img-extensions 
 
 ## gradle dependency
 
-Replace the variable ${latestVersion} with the current latest version: [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/icon-img-extensions/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/icon-img-extensions)
+Replace the variable ${latestVersion} with the current latest version: [![Maven Central](https://img.shields.io/maven-central/v/io.github.astrapi69/icon-img-extensions)](https://central.sonatype.com/artifact/io.github.astrapi69/icon-img-extensions)
 
 You can first define the version in the ext section and add than the following gradle dependency to
 your project `build.gradle` if you want to import the core functionality of icon-img-extensions:
@@ -74,8 +74,7 @@ then add the dependency to the dependencies area
 
 ## Maven dependency
 
-Maven dependency is now on sonatype.
-Check out [sonatype repository](https://oss.sonatype.org/index.html#nexus-search;gav~io.github.astrapi69~icon-img-extensions~~~) for the latest snapshots and releases.
+The library is on Maven Central. Check out [Maven Central](https://central.sonatype.com/artifact/io.github.astrapi69/icon-img-extensions) for the latest release.
 
 Add the following maven dependency to your project `pom.xml` if you want to import the core
 functionality of icon-img-extensions:
