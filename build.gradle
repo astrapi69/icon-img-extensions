@@ -26,3 +26,5 @@ description = "$rootProject.name"
 
 // import gradle files
 apply from: "gradle/apply-gradle-files.gradle"
+
+apply from: "gradle/test-results-complete.gradle"
