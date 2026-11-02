@@ -13,11 +13,9 @@ plugins {
     id 'maven-publish'
     id 'signing'
     alias(libs.plugins.gradle.versions.plugin)
-    alias(libs.plugins.grgit.gradle)
-    alias(libs.plugins.license.gradle.plugin)
     alias(libs.plugins.lombok.plugin)
     alias(libs.plugins.spotless.plugin.gradle)
-    alias(libs.plugins.version.catalog.update)
+    alias(libs.plugins.versionCatalogUpdate)
 }
 
 group = "$groupPackage" as Object
@@ -26,5 +24,20 @@ description = "$rootProject.name"
 
 // import gradle files
 apply from: "gradle/apply-gradle-files.gradle"
+
+java {
+    sourceCompatibility = "$projectSourceCompatibility" as Object
+    toolchain {
+        languageVersion = JavaLanguageVersion.of("$projectSourceCompatibility")
+    }
+}
+
+tasks.withType(JavaCompile).configureEach { javaCompiler ->
+    options.encoding = "UTF-8"
+    // uncomment the next line for build with compiler argument -Xlint:deprecation
+    // options.compilerArgs << "-Xlint:deprecation"
+    // uncomment the next line for build with compiler argument -Xlint:unchecked
+    // options.compilerArgs << "-Xlint:unchecked"
+}
 
 apply from: "gradle/test-results-complete.gradle"
